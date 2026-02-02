@@ -16,3 +16,18 @@ h1#principal {
 h2 {
     color: #3c805e;
 }
+.basico {
+    color: #1e402f;
+}
+
+.intermediario {
+    color: #80793c;
+}
+
+.avancado {
+    color: #803c3c;
+}
+
+.destaque {
+    background-color: #c5c56070;
+}
