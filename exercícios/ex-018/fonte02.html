@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fontes Externas</title>
+    <style>
+        @font-face {
+            font-family: 'simple diary';
+            src: url(fonts/Simple\ Diary.otf ) format(opentype) /*, url('love larry.ttf') format(truetype) SOMENTE SE TIVER UM ARQUIVO OTF!!!*/
+        }
+        @font-face {
+            font-family: 'diary';
+            src: url(fonts/Diary\ Book.otf) format(opentype);
+            
+        }
+        
+        /*
+        Tipos de format()
+        - opentype(otf)
+        - truetype(ttf)
+        - embedded-opentype
+        - truetype-aat
+        - svg
+        */
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            font-family: 'diary', 'simple diary';
+            font-size: 2em;
+        }
+        h1, h2 {
+            font-family: 'simple diary', 'diary', Times, serif;
+            font-size: 1.5em;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Título</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum delectus provident commodi natus dignissimos, quae dicta voluptatum doloribus officia facere magni possimus adipisci velit maiores hic dolorum nam consequatur minima.</p>
+    <h2>Subtítulo</h2>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id deserunt porro alias fuga expedita veritatis eligendi tempora corrupti quas! Cupiditate quod aperiam ab, reiciendis impedit rerum voluptate ratione officia earum.</p>
+    <iframe src="https://www.slideshare.net/slideshow/embed_code/key/9snnnNkVDFxvZR" width="427" height="356"frameborder="0" marginwidth="0" marginheight="0" scrolling="no"style="border: var(--border-1) solid #CCC; border-width:1px; margin-bottom:5px; max-width:100%;"allowfullscreen></iframe><div style="margin-bottom:5px"><strong><a href="https://pt.slideshare.net/slideshow/vol-1-dirio-de-um-bananapdf/255484192" title="vol-1-dirio-de-um-bananapdf" target="_blank">vol-1-dirio-de-um-bananapdf</a></strong>from <strong><a href="https://pt.slideshare.net/gumerda" target="_blank">ANONI MIX</a></strong></div>
+</body>
+</html>
