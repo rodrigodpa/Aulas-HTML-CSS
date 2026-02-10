@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabelas no HTML</title>
+    <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+
+<h1>Tabelas no HTML</h1>
+
+<p>
+Tabelas são usadas para representar <strong>dados tabulares</strong>,
+ou seja, informações organizadas em linhas e colunas.
+Elas não devem ser usadas para layout visual.
+</p>
+
+<hr>
+
+<!-- ================= TABLE ================= -->
+
+<h2>&lt;table&gt; — Estrutura da tabela</h2>
+
+<p>
+A tag <code>&lt;table&gt;</code> define o contêiner principal da tabela.
+Dentro dela ficam linhas, células e elementos semânticos.
+</p>
+
+<pre>
+&lt;table&gt;
+&lt;/table&gt;
+</pre>
+
+<hr>
+
+<!-- ================= THEAD TBODY TFOOT ================= -->
+
+<h2>&lt;thead&gt;, &lt;tbody&gt; e &lt;tfoot&gt;</h2>
+
+<p>
+Essas tags organizam semanticamente a tabela:
+</p>
+
+<ul>
+    <li><code>&lt;thead&gt;</code> — cabeçalho</li>
+    <li><code>&lt;tbody&gt;</code> — corpo dos dados</li>
+    <li><code>&lt;tfoot&gt;</code> — rodapé</li>
+</ul>
+
+<pre>
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Nome&lt;/th&gt;
+      &lt;th&gt;Idade&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Ana&lt;/td&gt;
+      &lt;td&gt;20&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+
+  &lt;tfoot&gt;
+    &lt;tr&gt;
+      &lt;td colspan="2"&gt;Fim da tabela&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tfoot&gt;
+&lt;/table&gt;
+</pre>
+
+<p><strong>Boa prática:</strong> mesmo que não use <code>&lt;tfoot&gt;</code>,
+utilize <code>&lt;thead&gt;</code> e <code>&lt;tbody&gt;</code>.</p>
+
+<hr>
+
+<!-- ================= TR ================= -->
+
+<h2>&lt;tr&gt; — Linha</h2>
+
+<p>
+Define uma linha dentro da tabela.
+</p>
+
+<pre>
+&lt;tr&gt;
+  &lt;td&gt;Dado&lt;/td&gt;
+&lt;/tr&gt;
+</pre>
+
+<hr>
+
+<!-- ================= TD ================= -->
+
+<h2>&lt;td&gt; — Célula de dados</h2>
+
+<p>
+Representa uma célula comum da tabela.
+</p>
+
+<pre>
+&lt;td&gt;Conteúdo&lt;/td&gt;
+</pre>
+
+<hr>
+
+<!-- ================= TH ================= -->
+
+<h2>&lt;th&gt; — Célula de cabeçalho</h2>
+
+<p>
+Usada para cabeçalhos de colunas ou linhas.
+Leitores de tela usam essa informação
+para relacionar dados corretamente.
+</p>
+
+<pre>
+&lt;th&gt;Produto&lt;/th&gt;
+</pre>
+
+<h3>Atributo <code>scope</code></h3>
+
+<p>
+Indica a qual parte da tabela o cabeçalho se refere.
+</p>
+
+<pre>
+&lt;th scope="col"&gt;Preço&lt;/th&gt;
+&lt;th scope="row"&gt;Total&lt;/th&gt;
+</pre>
+
+<hr>
+
+<!-- ================= CAPTION ================= -->
+
+<h2>&lt;caption&gt; — Título da tabela</h2>
+
+<p>
+Fornece um título descritivo para a tabela.
+É importante para acessibilidade.
+</p>
+
+<pre>
+&lt;table&gt;
+  &lt;caption&gt;Lista de alunos&lt;/caption&gt;
+&lt;/table&gt;
+</pre>
+
+<p><strong>Use sempre que possível.</strong></p>
+
+<hr>
+
+<!-- ================= SPAN ================= -->
+
+<h2>Mesclagem de células</h2>
+
+<h3><code>colspan</code></h3>
+<p>
+Mescla colunas.
+</p>
+
+<pre>
+&lt;td colspan="2"&gt;Total&lt;/td&gt;
+</pre>
+
+<h3><code>rowspan</code></h3>
+<p>
+Mescla linhas.
+</p>
+
+<pre>
+&lt;td rowspan="3"&gt;Grupo A&lt;/td&gt;
+</pre>
+
+<hr>
+
+<!-- ================= COLGROUP ================= -->
+
+<h2>&lt;colgroup&gt; e &lt;col&gt;</h2>
+
+<p>
+Permitem estilizar colunas inteiras.
+</p>
+
+<pre>
+&lt;table&gt;
+  &lt;colgroup&gt;
+    &lt;col span="1"&gt;
+    &lt;col span="1"&gt;
+  &lt;/colgroup&gt;
+&lt;/table&gt;
+</pre>
+
+<p>
+Muito usado em tabelas grandes.
+</p>
+
+<hr>
+
+<!-- ================= ACESSIBILIDADE ================= -->
+
+<h2>Boas práticas em tabelas</h2>
+
+<ul>
+    <li>Usar <code>&lt;th&gt;</code> corretamente</li>
+    <li>Definir <code>scope</code> nos cabeçalhos</li>
+    <li>Adicionar <code>&lt;caption&gt;</code></li>
+    <li>Não usar tabelas para layout</li>
+</ul>
+
+<hr>
+
+<p>
+<a href="../index.html">⬅ Voltar ao Dicionário</a>
+</p>
+
+</body>
+</html>

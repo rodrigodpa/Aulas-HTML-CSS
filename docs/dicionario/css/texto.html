@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Texto e Tipografia em CSS</title>
+    <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+
+<h1>Texto e Tipografia em CSS</h1>
+
+<p>
+CSS é responsável por controlar a <strong>aparência do texto</strong>:
+fontes, tamanhos, alinhamento, espaçamento e decoração.
+Tipografia bem feita melhora <strong>leitura, hierarquia visual e usabilidade</strong>.
+</p>
+
+<hr>
+
+<!-- ================= FONT-FAMILY ================= -->
+
+<h2>font-family — Família da fonte</h2>
+
+<p>
+Define a fonte usada no texto. Sempre forneça fontes alternativas.
+</p>
+
+<pre>
+p {
+  font-family: Arial, Helvetica, sans-serif;
+}
+</pre>
+
+<p>
+Use fontes genéricas como fallback:
+</p>
+
+<ul>
+    <li>serif</li>
+    <li>sans-serif</li>
+    <li>monospace</li>
+    <li>cursive</li>
+    <li>fantasy</li>
+</ul>
+
+<hr>
+
+<!-- ================= FONT-SIZE ================= -->
+
+<h2>font-size — Tamanho da fonte</h2>
+
+<p>
+Controla o tamanho do texto.
+</p>
+
+<pre>
+p {
+  font-size: 16px;
+}
+</pre>
+
+<h3>Unidades comuns</h3>
+<ul>
+    <li><code>px</code> — pixels (fixo)</li>
+    <li><code>em</code> — relativo ao elemento pai</li>
+    <li><code>rem</code> — relativo ao body</li>
+    <li><code>%</code> — porcentagem</li>
+</ul>
+
+<p><strong>Recomendação:</strong> usar <code>rem</code>.</p>
+
+<hr>
+
+<!-- ================= FONT-WEIGHT ================= -->
+
+<h2>font-weight — Peso da fonte</h2>
+
+<p>
+Define a espessura do texto.
+</p>
+
+<pre>
+p {
+  font-weight: bold;
+}
+</pre>
+
+<h3>Valores possíveis</h3>
+<ul>
+    <li>normal</li>
+    <li>bold</li>
+    <li>lighter</li>
+    <li>bolder</li>
+    <li>100–900</li>
+</ul>
+
+<hr>
+
+<!-- ================= FONT-STYLE ================= -->
+
+<h2>font-style — Estilo da fonte</h2>
+
+<pre>
+em {
+  font-style: italic;
+}
+</pre>
+
+<ul>
+    <li>normal</li>
+    <li>italic</li>
+    <li>oblique</li>
+</ul>
+
+<hr>
+
+<!-- ================= SHORTHAND FONT ================= -->
+
+<h2>font — Shorthand</h2>
+
+<p>
+Define várias propriedades de fonte em uma linha.
+</p>
+
+<pre>
+p {
+  font: italic bold 1.2rem Arial, sans-serif;
+}
+</pre>
+
+<p><strong>Ordem obrigatória:</strong></p>
+<ol>
+    <li>font-style</li>
+    <li>font-weight</li>
+    <li>font-size</li>
+    <li>font-family</li>
+</ol>
+
+<hr>
+
+<!-- ================= LINE-HEIGHT ================= -->
+
+<h2>line-height — Altura da linha</h2>
+
+<p>
+Controla o espaçamento vertical entre linhas.
+</p>
+
+<pre>
+p {
+  line-height: 1.6;
+}
+</pre>
+
+<p><strong>Dica:</strong> valores sem unidade são recomendados.</p>
+
+<hr>
+
+<!-- ================= TEXT-ALIGN ================= -->
+
+<h2>text-align — Alinhamento do texto</h2>
+
+<pre>
+p {
+  text-align: justify;
+}
+</pre>
+
+<ul>
+    <li>left</li>
+    <li>right</li>
+    <li>center</li>
+    <li>justify</li>
+</ul>
+
+<hr>
+
+<!-- ================= TEXT-INDENT ================= -->
+
+<h2>text-indent — Recuo da primeira linha</h2>
+
+<pre>
+p {
+  text-indent: 2em;
+}
+</pre>
+
+<p>
+Muito usado em textos longos e artigos.
+</p>
+
+<hr>
+
+<!-- ================= LETTER-SPACING ================= -->
+
+<h2>letter-spacing — Espaçamento entre letras</h2>
+
+<pre>
+h1 {
+  letter-spacing: 2px;
+}
+</pre>
+
+<p>
+Use com moderação. Valores altos prejudicam leitura.
+</p>
+
+<hr>
+
+<!-- ================= WORD-SPACING ================= -->
+
+<h2>word-spacing — Espaçamento entre palavras</h2>
+
+<pre>
+p {
+  word-spacing: 4px;
+}
+</pre>
+
+<hr>
+
+<!-- ================= TEXT-TRANSFORM ================= -->
+
+<h2>text-transform — Transformação do texto</h2>
+
+<pre>
+p {
+  text-transform: uppercase;
+}
+</pre>
+
+<ul>
+    <li>uppercase</li>
+    <li>lowercase</li>
+    <li>capitalize</li>
+</ul>
+
+<p><strong>Não altera o conteúdo real, apenas a exibição.</strong></p>
+
+<hr>
+
+<!-- ================= TEXT-DECORATION ================= -->
+
+<h2>text-decoration — Decoração do texto</h2>
+
+<pre>
+a {
+  text-decoration: none;
+}
+</pre>
+
+<p>
+Propriedade composta:
+</p>
+
+<ul>
+    <li>text-decoration-line</li>
+    <li>text-decoration-style</li>
+    <li>text-decoration-color</li>
+</ul>
+
+<hr>
+
+<!-- ================= WHITE-SPACE ================= -->
+
+<h2>white-space — Tratamento de espaços</h2>
+
+<pre>
+pre {
+  white-space: pre-wrap;
+}
+</pre>
+
+<ul>
+    <li>normal</li>
+    <li>nowrap</li>
+    <li>pre</li>
+    <li>pre-wrap</li>
+    <li>pre-line</li>
+</ul>
+
+<hr>
+
+<!-- ================= OVERFLOW ================= -->
+
+<h2>text-overflow — Texto excedente</h2>
+
+<pre>
+p {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+</pre>
+
+<p>
+Usado para cortar texto com reticências.
+</p>
+
+<hr>
+
+<!-- ================= COLOR ================= -->
+
+<h2>color — Cor do texto</h2>
+
+<pre>
+p {
+  color: #333;
+}
+</pre>
+
+<p>
+Aceita:
+</p>
+
+<ul>
+    <li>nomes (red)</li>
+    <li>hex (#ff0000)</li>
+    <li>rgb()</li>
+    <li>hsl()</li>
+</ul>
+
+<hr>
+
+<!-- ================= TEXT-SHADOW ================= -->
+
+<h2>text-shadow — Sombra no texto</h2>
+
+<pre>
+h1 {
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+</pre>
+
+<p>
+Ordem:
+</p>
+<ul>
+    <li>deslocamento X</li>
+    <li>deslocamento Y</li>
+    <li>desfoque</li>
+    <li>cor</li>
+</ul>
+
+<hr>
+
+<!-- ================= RESUMO ================= -->
+
+<h2>Resumo</h2>
+
+<ul>
+    <li>Tipografia controla legibilidade</li>
+    <li>Use unidades relativas</li>
+    <li>Prefira semântica no HTML</li>
+    <li>CSS apenas estiliza</li>
+</ul>
+
+<hr>
+
+<p>
+<a href="../index.html">⬅ Voltar ao Dicionário</a>
+</p>
+
+</body>
+</html>

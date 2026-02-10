@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulários no HTML</title>
+    <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+
+<h1>Formulários no HTML</h1>
+
+<p>
+Formulários permitem a <strong>entrada de dados pelo usuário</strong>.
+São usados para login, cadastro, busca, envio de mensagens e interação
+com sistemas web.
+</p>
+
+<hr>
+
+<!-- ================= FORM ================= -->
+
+<h2>&lt;form&gt; — Contêiner do formulário</h2>
+
+<p>
+A tag <code>&lt;form&gt;</code> envolve todos os campos do formulário
+e define como os dados serão enviados.
+</p>
+
+<pre>
+&lt;form action="processar.php" method="post"&gt;
+&lt;/form&gt;
+</pre>
+
+<h3>Atributos principais</h3>
+<ul>
+    <li><code>action</code> — destino dos dados</li>
+    <li><code>method</code> — método HTTP (<code>get</code> ou <code>post</code>)</li>
+    <li><code>autocomplete</code> — ativa ou desativa preenchimento automático</li>
+</ul>
+
+<hr>
+
+<!-- ================= LABEL ================= -->
+
+<h2>&lt;label&gt; — Rótulo de campo</h2>
+
+<p>
+Associa um texto explicativo a um campo de formulário.
+É essencial para acessibilidade.
+</p>
+
+<pre>
+&lt;label for="email"&gt;E-mail&lt;/label&gt;
+&lt;input id="email"&gt;
+</pre>
+
+<p><strong>Boa prática:</strong> sempre usar <code>label</code> com <code>for</code>.</p>
+
+<hr>
+
+<!-- ================= INPUT ================= -->
+
+<h2>&lt;input&gt; — Campo de entrada</h2>
+
+<p>
+Elemento mais versátil dos formulários.
+Seu comportamento depende do atributo <code>type</code>.
+</p>
+
+<pre>
+&lt;input type="text"&gt;
+</pre>
+
+<h3>Tipos comuns</h3>
+<ul>
+    <li><code>text</code> — texto simples</li>
+    <li><code>email</code> — e-mail</li>
+    <li><code>password</code> — senha</li>
+    <li><code>number</code> — números</li>
+    <li><code>date</code> — data</li>
+    <li><code>checkbox</code> — múltipla escolha</li>
+    <li><code>radio</code> — escolha única</li>
+    <li><code>file</code> — envio de arquivos</li>
+    <li><code>hidden</code> — campo invisível</li>
+</ul>
+
+<hr>
+
+<!-- ================= ATRIBUTOS INPUT ================= -->
+
+<h2>Atributos importantes do &lt;input&gt;</h2>
+
+<pre>
+&lt;input
+  type="text"
+  name="usuario"
+  placeholder="Digite seu nome"
+  required
+  minlength="3"
+  maxlength="20"
+&gt;
+</pre>
+
+<ul>
+    <li><code>name</code> — nome do campo (obrigatório para envio)</li>
+    <li><code>placeholder</code> — dica visual</li>
+    <li><code>required</code> — campo obrigatório</li>
+    <li><code>readonly</code> — somente leitura</li>
+    <li><code>disabled</code> — desativado</li>
+</ul>
+
+<hr>
+
+<!-- ================= TEXTAREA ================= -->
+
+<h2>&lt;textarea&gt; — Texto longo</h2>
+
+<p>
+Usado para mensagens, comentários ou descrições.
+</p>
+
+<pre>
+&lt;textarea rows="4" cols="40"&gt;&lt;/textarea&gt;
+</pre>
+
+<p><strong>Boa prática:</strong> controlar tamanho com CSS, não com <code>cols</code>.</p>
+
+<hr>
+
+<!-- ================= SELECT ================= -->
+
+<h2>&lt;select&gt; e &lt;option&gt; — Lista suspensa</h2>
+
+<p>
+Permite selecionar uma opção entre várias.
+</p>
+
+<pre>
+&lt;select name="cidade"&gt;
+  &lt;option value="rs"&gt;Rio Grande do Sul&lt;/option&gt;
+  &lt;option value="sc"&gt;Santa Catarina&lt;/option&gt;
+&lt;/select&gt;
+</pre>
+
+<h3>&lt;optgroup&gt;</h3>
+
+<pre>
+&lt;select&gt;
+  &lt;optgroup label="Sul"&gt;
+    &lt;option&gt;RS&lt;/option&gt;
+    &lt;option&gt;SC&lt;/option&gt;
+  &lt;/optgroup&gt;
+&lt;/select&gt;
+</pre>
+
+<hr>
+
+<!-- ================= BUTTON ================= -->
+
+<h2>&lt;button&gt; — Botões</h2>
+
+<p>
+Representa ações dentro do formulário.
+</p>
+
+<pre>
+&lt;button type="submit"&gt;Enviar&lt;/button&gt;
+&lt;button type="reset"&gt;Limpar&lt;/button&gt;
+&lt;button type="button"&gt;Ação&lt;/button&gt;
+</pre>
+
+<p><strong>Prefira &lt;button&gt; a &lt;input type="submit"&gt;.</strong></p>
+
+<hr>
+
+<!-- ================= FIELDSET ================= -->
+
+<h2>&lt;fieldset&gt; e &lt;legend&gt;</h2>
+
+<p>
+Agrupam campos relacionados.
+</p>
+
+<pre>
+&lt;fieldset&gt;
+  &lt;legend&gt;Dados pessoais&lt;/legend&gt;
+  &lt;input type="text"&gt;
+&lt;/fieldset&gt;
+</pre>
+
+<hr>
+
+<!-- ================= VALIDAÇÃO ================= -->
+
+<h2>Validação nativa</h2>
+
+<p>
+O HTML oferece validação automática sem JavaScript.
+</p>
+
+<pre>
+&lt;input type="email" required&gt;
+&lt;input type="number" min="1" max="10"&gt;
+</pre>
+
+<p>
+O navegador bloqueia o envio se os dados forem inválidos.
+</p>
+
+<hr>
+
+<!-- ================= ACESSIBILIDADE ================= -->
+
+<h2>Boas práticas em formulários</h2>
+
+<ul>
+    <li>Usar <code>&lt;label&gt;</code> corretamente</li>
+    <li>Agrupar campos com <code>&lt;fieldset&gt;</code></li>
+    <li>Evitar placeholders como substituto de labels</li>
+    <li>Fornecer mensagens claras de erro</li>
+</ul>
+
+<hr>
+
+<p>
+<a href="../index.html">⬅ Voltar ao Dicionário</a>
+</p>
+
+</body>
+</html>

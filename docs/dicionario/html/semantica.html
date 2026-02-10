@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Semântico</title>
+    <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+
+<h1>HTML Semântico</h1>
+
+<p>
+HTML semântico descreve o <strong>significado do conteúdo</strong>,
+não sua aparência. Ele melhora <strong>acessibilidade</strong>,
+<strong>SEO</strong>, manutenção e leitura por máquinas.
+</p>
+
+<hr>
+
+<!-- ================= CONCEITO ================= -->
+
+<h2>O que é semântica?</h2>
+
+<p>
+Semântica é o uso de elementos HTML que
+<strong>expressam o papel do conteúdo</strong>.
+</p>
+
+<ul>
+    <li>Para leitores de tela</li>
+    <li>Para mecanismos de busca</li>
+    <li>Para desenvolvedores</li>
+</ul>
+
+<p><strong>Regra:</strong> se a tag tem significado, use-a.</p>
+
+<hr>
+
+<!-- ================= HEADER ================= -->
+
+<h2>&lt;header&gt; — Cabeçalho</h2>
+
+<p>
+Representa o cabeçalho de uma página ou seção.
+Pode conter títulos, logos, menus e introduções.
+</p>
+
+<pre>
+&lt;header&gt;
+  &lt;h1&gt;Site&lt;/h1&gt;
+&lt;/header&gt;
+</pre>
+
+<p><strong>Observações:</strong></p>
+<ul>
+    <li>Pode existir mais de um <code>&lt;header&gt;</code></li>
+    <li>Não é sinônimo de topo visual</li>
+</ul>
+
+<hr>
+
+<!-- ================= NAV ================= -->
+
+<h2>&lt;nav&gt; — Navegação</h2>
+
+<p>
+Agrupa links de navegação principais ou secundários.
+</p>
+
+<pre>
+&lt;nav&gt;
+  &lt;a href="#"&gt;Home&lt;/a&gt;
+  &lt;a href="#"&gt;Contato&lt;/a&gt;
+&lt;/nav&gt;
+</pre>
+
+<p><strong>Use apenas para blocos de navegação.</strong></p>
+
+<hr>
+
+<!-- ================= MAIN ================= -->
+
+<h2>&lt;main&gt; — Conteúdo principal</h2>
+
+<p>
+Representa o conteúdo central e único da página.
+</p>
+
+<pre>
+&lt;main&gt;
+  &lt;article&gt;Conteúdo&lt;/article&gt;
+&lt;/main&gt;
+</pre>
+
+<p><strong>Regras:</strong></p>
+<ul>
+    <li>Apenas um <code>&lt;main&gt;</code> por página</li>
+    <li>Não deve estar dentro de <code>header</code>, <code>footer</code> ou <code>aside</code></li>
+</ul>
+
+<hr>
+
+<!-- ================= SECTION ================= -->
+
+<h2>&lt;section&gt; — Seção temática</h2>
+
+<p>
+Agrupa conteúdo relacionado por tema.
+Normalmente possui um título.
+</p>
+
+<pre>
+&lt;section&gt;
+  &lt;h2&gt;Notícias&lt;/h2&gt;
+&lt;/section&gt;
+</pre>
+
+<p><strong>Se não há título, talvez não seja uma section.</strong></p>
+
+<hr>
+
+<!-- ================= ARTICLE ================= -->
+
+<h2>&lt;article&gt; — Conteúdo independente</h2>
+
+<p>
+Representa conteúdo que pode existir sozinho:
+post, notícia, comentário, card.
+</p>
+
+<pre>
+&lt;article&gt;
+  &lt;h2&gt;Post&lt;/h2&gt;
+  &lt;p&gt;Texto&lt;/p&gt;
+&lt;/article&gt;
+</pre>
+
+<p><strong>Dica:</strong> se pode ser reutilizado fora da página, é um article.</p>
+
+<hr>
+
+<!-- ================= ASIDE ================= -->
+
+<h2>&lt;aside&gt; — Conteúdo complementar</h2>
+
+<p>
+Conteúdo relacionado, mas não essencial.
+</p>
+
+<pre>
+&lt;aside&gt;
+  Conteúdo lateral
+&lt;/aside&gt;
+</pre>
+
+<p>
+Exemplos: barra lateral, widgets, links relacionados.
+</p>
+
+<hr>
+
+<!-- ================= FOOTER ================= -->
+
+<h2>&lt;footer&gt; — Rodapé</h2>
+
+<p>
+Representa o rodapé de uma página ou seção.
+</p>
+
+<pre>
+&lt;footer&gt;
+  &lt;p&gt;© 2026&lt;/p&gt;
+&lt;/footer&gt;
+</pre>
+
+<p>
+Pode conter: autor, copyright, links legais.
+</p>
+
+<hr>
+
+<!-- ================= ADDRESS ================= -->
+
+<h2>&lt;address&gt; — Informações de contato</h2>
+
+<p>
+Usado para informações do autor ou responsável pelo conteúdo.
+</p>
+
+<pre>
+&lt;address&gt;
+  Contato: email@exemplo.com
+&lt;/address&gt;
+</pre>
+
+<p><strong>Não é para endereços genéricos aleatórios.</strong></p>
+
+<hr>
+
+<!-- ================= FIGURE ================= -->
+
+<h2>&lt;figure&gt; e &lt;figcaption&gt;</h2>
+
+<p>
+Agrupam mídia com legenda associada.
+</p>
+
+<pre>
+&lt;figure&gt;
+  &lt;img src="img.png"&gt;
+  &lt;figcaption&gt;Legenda&lt;/figcaption&gt;
+&lt;/figure&gt;
+</pre>
+
+<p><strong>Legenda faz parte do conteúdo, não é decorativa.</strong></p>
+
+<hr>
+
+<!-- ================= TIME ================= -->
+
+<h2>&lt;time&gt; — Datas e horários</h2>
+
+<p>
+Representa datas legíveis por máquinas.
+</p>
+
+<pre>
+&lt;time datetime="2026-02-10"&gt;10 de fevereiro&lt;/time&gt;
+</pre>
+
+<p>
+Usado para eventos, posts e históricos.
+</p>
+
+<hr>
+
+<!-- ================= DETAILS ================= -->
+
+<h2>&lt;details&gt; e &lt;summary&gt;</h2>
+
+<p>
+Criam conteúdo expansível nativo.
+</p>
+
+<pre>
+&lt;details&gt;
+  &lt;summary&gt;Mais informações&lt;/summary&gt;
+  Texto oculto
+&lt;/details&gt;
+</pre>
+
+<p><strong>Interativo sem JavaScript.</strong></p>
+
+<hr>
+
+<!-- ================= ERROS COMUNS ================= -->
+
+<h2>Erros comuns</h2>
+
+<ul>
+    <li>Usar <code>&lt;div&gt;</code> para tudo</li>
+    <li>Usar <code>&lt;section&gt;</code> sem título</li>
+    <li>Confundir <code>article</code> com <code>section</code></li>
+    <li>Ignorar semântica por estética</li>
+</ul>
+
+<hr>
+
+<!-- ================= RESUMO ================= -->
+
+<h2>Resumo</h2>
+
+<ul>
+    <li>HTML semântico descreve significado</li>
+    <li>CSS cuida da aparência</li>
+    <li>Boa semântica melhora tudo</li>
+</ul>
+
+<hr>
+
+<p>
+<a href="../index.html">⬅ Voltar ao Dicionário</a>
+</p>
+
+</body>
+</html>

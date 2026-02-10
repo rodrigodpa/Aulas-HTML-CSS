@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listas em HTML</title>
+    <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+
+<h1>Listas em HTML</h1>
+
+<p>
+Listas são usadas para representar <strong>conjuntos de itens relacionados</strong>.
+O HTML possui três tipos principais de listas, cada uma com
+<strong>significado semântico específico</strong>.
+</p>
+
+<hr>
+
+<!-- ================= LISTA NÃO ORDENADA ================= -->
+
+<h2>&lt;ul&gt; — Lista não ordenada</h2>
+
+<p>
+Representa uma lista onde a <strong>ordem dos itens não importa</strong>.
+Visualmente, costuma ser exibida com marcadores (bolinhas).
+</p>
+
+<pre>
+&lt;ul&gt;
+  &lt;li&gt;Item A&lt;/li&gt;
+  &lt;li&gt;Item B&lt;/li&gt;
+  &lt;li&gt;Item C&lt;/li&gt;
+&lt;/ul&gt;
+</pre>
+
+<p><strong>Uso comum:</strong></p>
+<ul>
+    <li>Menus</li>
+    <li>Listas de opções</li>
+    <li>Agrupamento de informações</li>
+</ul>
+
+<p><strong>Erro comum:</strong> usar <code>&lt;br&gt;</code> no lugar de listas.</p>
+
+<hr>
+
+<!-- ================= LISTA ORDENADA ================= -->
+
+<h2>&lt;ol&gt; — Lista ordenada</h2>
+
+<p>
+Representa uma lista onde a <strong>ordem é relevante</strong>.
+Por padrão, é numerada.
+</p>
+
+<pre>
+&lt;ol&gt;
+  &lt;li&gt;Primeiro passo&lt;/li&gt;
+  &lt;li&gt;Segundo passo&lt;/li&gt;
+  &lt;li&gt;Terceiro passo&lt;/li&gt;
+&lt;/ol&gt;
+</pre>
+
+<h3>Atributos importantes</h3>
+
+<h4><code>type</code></h4>
+<p>
+Define o tipo de numeração.
+</p>
+
+<pre>
+&lt;ol type="1"&gt;  <!-- números -->
+&lt;ol type="A"&gt;  <!-- letras maiúsculas -->
+&lt;ol type="a"&gt;  <!-- letras minúsculas -->
+&lt;ol type="I"&gt;  <!-- romanos -->
+&lt;ol type="i"&gt;
+</pre>
+
+<h4><code>start</code></h4>
+<p>
+Define o número inicial da lista.
+</p>
+
+<pre>
+&lt;ol start="5"&gt;
+</pre>
+
+<h4><code>reversed</code></h4>
+<p>
+Inverte a ordem da contagem.
+</p>
+
+<pre>
+&lt;ol reversed&gt;
+</pre>
+
+<hr>
+
+<!-- ================= ITENS DA LISTA ================= -->
+
+<h2>&lt;li&gt; — Item de lista</h2>
+
+<p>
+Define cada item dentro de <code>&lt;ul&gt;</code> ou <code>&lt;ol&gt;</code>.
+</p>
+
+<pre>
+&lt;li&gt;Item&lt;/li&gt;
+</pre>
+
+<p>
+Um <code>&lt;li&gt;</code> pode conter:
+</p>
+<ul>
+    <li>Texto</li>
+    <li>Outras listas</li>
+    <li>Links</li>
+    <li>Elementos HTML em geral</li>
+</ul>
+
+<hr>
+
+<!-- ================= LISTAS ANINHADAS ================= -->
+
+<h2>Listas aninhadas</h2>
+
+<p>
+É possível criar listas dentro de outras listas,
+mantendo uma hierarquia clara.
+</p>
+
+<pre>
+&lt;ul&gt;
+  &lt;li&gt;Front-end
+    &lt;ul&gt;
+      &lt;li&gt;HTML&lt;/li&gt;
+      &lt;li&gt;CSS&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</pre>
+
+<p><strong>Boa prática:</strong> respeitar a hierarquia e evitar excessos.</p>
+
+<hr>
+
+<!-- ================= LISTA DE DEFINIÇÃO ================= -->
+
+<h2>&lt;dl&gt; — Lista de definição</h2>
+
+<p>
+Usada para relacionar <strong>termos</strong> e suas
+<strong>descrições</strong>.
+Muito comum em dicionários e glossários.
+</p>
+
+<pre>
+&lt;dl&gt;
+  &lt;dt&gt;HTML&lt;/dt&gt;
+  &lt;dd&gt;Linguagem de marcação&lt;/dd&gt;
+&lt;/dl&gt;
+</pre>
+
+<h3>Tags envolvidas</h3>
+<ul>
+    <li><code>&lt;dl&gt;</code> — lista de definição</li>
+    <li><code>&lt;dt&gt;</code> — termo</li>
+    <li><code>&lt;dd&gt;</code> — descrição</li>
+</ul>
+
+<p>
+Um mesmo termo pode ter várias descrições.
+</p>
+
+<hr>
+
+<!-- ================= ACESSIBILIDADE ================= -->
+
+<h2>Acessibilidade e semântica</h2>
+
+<p>
+Listas bem estruturadas ajudam:
+</p>
+
+<ul>
+    <li>Leitores de tela</li>
+    <li>Mecanismos de busca</li>
+    <li>Manutenção do código</li>
+</ul>
+
+<p><strong>Dica:</strong> nunca use listas apenas por aparência visual.</p>
+
+<hr>
+
+<p>
+<a href="../index.html">⬅ Voltar ao Dicionário</a>
+</p>
+
+</body>
+</html>

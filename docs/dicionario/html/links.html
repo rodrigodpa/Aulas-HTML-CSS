@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Links em HTML</title>
+    <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+
+<h1>Links em HTML</h1>
+
+<p>
+Links são definidos pela tag <code>&lt;a&gt;</code> (âncora) e servem para
+<strong>conectar documentos, seções, arquivos ou ações</strong>.
+Eles são um dos pilares da Web.
+</p>
+
+<hr>
+
+<h2>&lt;a&gt; — Âncora</h2>
+
+<p>
+A tag <code>&lt;a&gt;</code> cria um link. Seu atributo essencial é <code>href</code>.
+</p>
+
+<pre>
+&lt;a href="https://example.com"&gt;Site externo&lt;/a&gt;
+</pre>
+
+<p>
+<a href="https://example.com" target="_blank">Exemplo de link externo</a>
+</p>
+
+<hr>
+
+<h2>Atributo <code>href</code></h2>
+
+<p>
+Define o destino do link.
+</p>
+
+<ul>
+    <li>URL absoluta: <code>https://site.com</code></li>
+    <li>URL relativa: <code>pagina.html</code></li>
+    <li>Âncora interna: <code>#secao</code></li>
+    <li>Email: <code>mailto:</code></li>
+    <li>Telefone: <code>tel:</code></li>
+</ul>
+
+<hr>
+
+<h2>Link interno (âncora)</h2>
+
+<p>
+Usado para navegar dentro da mesma página.
+</p>
+
+<pre>
+&lt;a href="#topo"&gt;Voltar ao topo&lt;/a&gt;
+</pre>
+
+<hr>
+
+<h2>Atributo <code>target</code></h2>
+
+<p>
+Controla onde o link será aberto.
+</p>
+
+<pre>
+&lt;a href="pagina.html" target="_self"&gt;Mesmo local&lt;/a&gt;
+&lt;a href="pagina.html" target="_blank"&gt;Nova aba&lt;/a&gt;
+</pre>
+
+<ul>
+    <li><code>_self</code> — padrão</li>
+    <li><code>_blank</code> — nova aba</li>
+</ul>
+
+<hr>
+
+<h2>Atributo <code>rel</code></h2>
+
+<p>
+Define o relacionamento entre o documento atual e o destino.
+</p>
+
+<pre>
+&lt;a href="https://externo.com" target="_blank" rel="noopener noreferrer"&gt;
+  Link seguro
+&lt;/a&gt;
+</pre>
+
+<p>
+<strong>Boa prática:</strong> sempre usar <code>rel</code> com <code>_blank</code>.
+</p>
+
+<hr>
+
+<h2>Link para download</h2>
+
+<p>
+Permite baixar arquivos diretamente.
+</p>
+
+<pre>
+&lt;a href="arquivo.pdf" download&gt;Baixar PDF&lt;/a&gt;
+</pre>
+
+<hr>
+
+<h2>Link de email</h2>
+
+<pre>
+&lt;a href="mailto:exemplo@email.com"&gt;Enviar email&lt;/a&gt;
+</pre>
+
+<hr>
+
+<h2>Link de telefone</h2>
+
+<pre>
+&lt;a href="tel:+551199999999"&gt;Ligar&lt;/a&gt;
+</pre>
+
+<hr>
+
+<h2>Link envolvendo outros elementos</h2>
+
+<p>
+Um link pode envolver textos, imagens ou blocos inteiros.
+</p>
+
+<pre>
+&lt;a href="pagina.html"&gt;
+  &lt;img src="imagem.png" alt="Imagem"&gt;
+&lt;/a&gt;
+</pre>
+
+<hr>
+
+<h2>Acessibilidade em links</h2>
+
+<ul>
+    <li>Texto do link deve ser descritivo</li>
+    <li>Evitar "clique aqui"</li>
+    <li>Usar <code>title</code> apenas quando necessário</li>
+</ul>
+
+<hr>
+
+<p>
+<a href="../index.html">⬅ Voltar ao Dicionário</a>
+</p>
+
+</body>
+</html>

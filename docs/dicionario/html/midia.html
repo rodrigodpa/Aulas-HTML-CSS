@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mídia no HTML</title>
+    <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+
+<h1>Mídia no HTML</h1>
+
+<p>
+O HTML permite incorporar <strong>conteúdo multimídia</strong> como imagens,
+áudio e vídeo. Esses elementos possuem atributos próprios e
+devem ser usados de forma <strong>semântica, acessível e performática</strong>.
+</p>
+
+<hr>
+
+<!-- ================= IMAGENS ================= -->
+
+<h2>&lt;img&gt; — Imagens</h2>
+
+<p>
+A tag <code>&lt;img&gt;</code> insere imagens no documento.
+Ela não possui fechamento e é considerada conteúdo <strong>inline</strong>.
+</p>
+
+<pre>
+&lt;img src="imagem.jpg" alt="Descrição da imagem"&gt;
+</pre>
+
+<h3>Atributos principais</h3>
+<ul>
+    <li><code>src</code> — caminho da imagem</li>
+    <li><code>alt</code> — descrição textual (obrigatória para acessibilidade)</li>
+    <li><code>width</code> e <code>height</code> — dimensões da imagem</li>
+</ul>
+
+<p><strong>Boa prática:</strong> sempre definir <code>alt</code>, mesmo em imagens decorativas.</p>
+
+<p><strong>Erro comum:</strong> usar imagem sem texto alternativo.</p>
+
+<hr>
+
+<!-- ================= PICTURE ================= -->
+
+<h2>&lt;picture&gt; — Imagens responsivas</h2>
+
+<p>
+Permite servir imagens diferentes conforme o tamanho da tela
+ou formato suportado pelo navegador.
+</p>
+
+<pre>
+&lt;picture&gt;
+  &lt;source media="(max-width: 600px)" srcset="img-pequena.jpg"&gt;
+  &lt;source media="(min-width: 601px)" srcset="img-grande.jpg"&gt;
+  &lt;img src="img-padrao.jpg" alt="Imagem responsiva"&gt;
+&lt;/picture&gt;
+</pre>
+
+<p>
+O navegador escolhe automaticamente a melhor opção disponível.
+</p>
+
+<hr>
+
+<!-- ================= FIGURE ================= -->
+
+<h2>&lt;figure&gt; e &lt;figcaption&gt;</h2>
+
+<p>
+Usados para agrupar mídias com legenda semântica.
+</p>
+
+<pre>
+&lt;figure&gt;
+  &lt;img src="grafico.png" alt="Gráfico de vendas"&gt;
+  &lt;figcaption&gt;Gráfico de vendas de 2025&lt;/figcaption&gt;
+&lt;/figure&gt;
+</pre>
+
+<p><strong>Use quando a legenda fizer parte do conteúdo.</strong></p>
+
+<hr>
+
+<!-- ================= ÁUDIO ================= -->
+
+<h2>&lt;audio&gt; — Áudio</h2>
+
+<p>
+Incorpora arquivos de áudio diretamente na página.
+</p>
+
+<pre>
+&lt;audio controls&gt;
+  &lt;source src="audio.mp3" type="audio/mpeg"&gt;
+  Seu navegador não suporta áudio.
+&lt;/audio&gt;
+</pre>
+
+<h3>Atributos comuns</h3>
+<ul>
+    <li><code>controls</code> — exibe controles</li>
+    <li><code>autoplay</code> — inicia automaticamente</li>
+    <li><code>loop</code> — repete o áudio</li>
+    <li><code>muted</code> — inicia mudo</li>
+</ul>
+
+<p><strong>Atenção:</strong> autoplay pode ser bloqueado pelo navegador.</p>
+
+<hr>
+
+<!-- ================= VÍDEO ================= -->
+
+<h2>&lt;video&gt; — Vídeo</h2>
+
+<p>
+Insere vídeos nativamente no HTML, sem plugins.
+</p>
+
+<pre>
+&lt;video controls width="600"&gt;
+  &lt;source src="video.mp4" type="video/mp4"&gt;
+  Seu navegador não suporta vídeo.
+&lt;/video&gt;
+</pre>
+
+<h3>Atributos importantes</h3>
+<ul>
+    <li><code>controls</code> — controles do player</li>
+    <li><code>poster</code> — imagem de capa</li>
+    <li><code>autoplay</code>, <code>loop</code>, <code>muted</code></li>
+</ul>
+
+<hr>
+
+<!-- ================= LEGENDAS ================= -->
+
+<h2>&lt;track&gt; — Legendas</h2>
+
+<p>
+Fornece legendas ou descrições para vídeos, melhorando
+a acessibilidade.
+</p>
+
+<pre>
+&lt;video controls&gt;
+  &lt;source src="video.mp4" type="video/mp4"&gt;
+  &lt;track kind="subtitles" src="legendas.vtt" srclang="pt" label="Português"&gt;
+&lt;/video&gt;
+</pre>
+
+<p><strong>Boa prática:</strong> sempre oferecer legendas.</p>
+
+<hr>
+
+<!-- ================= IFRAME ================= -->
+
+<h2>&lt;iframe&gt; — Conteúdo incorporado</h2>
+
+<p>
+Permite incorporar páginas externas, mapas, vídeos e apps.
+</p>
+
+<pre>
+&lt;iframe
+  src="https://www.youtube.com/embed/ID_DO_VIDEO"
+  width="560"
+  height="315"
+  allowfullscreen&gt;
+&lt;/iframe&gt;
+</pre>
+
+<p><strong>Atenção:</strong> iframes podem impactar desempenho e segurança.</p>
+
+<hr>
+
+<!-- ================= ACESSIBILIDADE ================= -->
+
+<h2>Boas práticas de acessibilidade</h2>
+
+<ul>
+    <li>Usar <code>alt</code> em imagens</li>
+    <li>Fornecer legendas em vídeos</li>
+    <li>Evitar autoplay com som</li>
+    <li>Descrever mídias importantes no texto</li>
+</ul>
+
+<hr>
+
+<p>
+<a href="../index.html">⬅ Voltar ao Dicionário</a>
+</p>
+
+</body>
+</html>

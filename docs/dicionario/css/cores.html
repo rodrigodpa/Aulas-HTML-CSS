@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Cores em CSS</title>
+    <link rel="stylesheet" href="../../style.css">
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f4f4f4;
+            color: #222;
+            padding: 20px;
+        }
+
+        h1 {
+            color: darkblue;
+        }
+
+        h2 {
+            color: rgb(120, 0, 200);
+        }
+
+        .hex {
+            color: #e63946;
+        }
+
+        .rgb {
+            color: rgb(46, 196, 182);
+        }
+
+        .rgba {
+            background-color: rgba(255, 183, 3, 0.4);
+            padding: 10px;
+        }
+
+        .hsl {
+            color: hsl(120, 60%, 35%);
+        }
+
+        .caixa {
+            background-color: #1d3557;
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Cores em CSS</h1>
+
+    <p>O CSS permite definir cores de várias formas.</p>
+
+    <h2>1. Nome da cor</h2>
+    <p style="color: red;">Exemplo usando nome da cor (red)</p>
+
+    <h2>2. Hexadecimal</h2>
+    <p class="hex">Cor definida em hexadecimal (#e63946)</p>
+
+    <h2>3. RGB</h2>
+    <p class="rgb">Cor definida em RGB (46, 196, 182)</p>
+
+    <h2>4. RGBA (com transparência)</h2>
+    <p class="rgba">RGBA permite controlar a opacidade</p>
+
+    <h2>5. HSL</h2>
+    <p class="hsl">Cor definida em HSL</p>
+
+    <div class="caixa">
+        Caixa com fundo escuro e texto claro
+    </div>
+
+</body>
+</html>

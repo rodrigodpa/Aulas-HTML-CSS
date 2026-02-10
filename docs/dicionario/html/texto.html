@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Texto e Semântica HTML</title>
+    <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+
+<h1>Texto e Semântica no HTML</h1>
+
+<p>
+O HTML não serve apenas para <em>formatar</em> texto.
+Cada tag textual possui <strong>significado semântico</strong>,
+importante para acessibilidade, SEO e manutenção do código.
+</p>
+
+<hr>
+
+<!-- ================= TÍTULOS ================= -->
+
+<h2>&lt;h1&gt; a &lt;h6&gt; — Títulos</h2>
+
+<p>
+As tags de título definem a <strong>hierarquia do conteúdo</strong>.
+Não são usadas para tamanho visual, e sim para estrutura lógica.
+</p>
+
+<pre>
+&lt;h1&gt;Título principal&lt;/h1&gt;
+&lt;h2&gt;Seção&lt;/h2&gt;
+&lt;h3&gt;Subseção&lt;/h3&gt;
+</pre>
+
+<p><strong>Boas práticas:</strong></p>
+<ul>
+    <li>Usar apenas um <code>&lt;h1&gt;</code> por página</li>
+    <li>Não pular níveis (ex: h1 direto para h4)</li>
+</ul>
+
+<p><strong>Erro comum:</strong> usar títulos apenas para “aumentar o texto”.</p>
+
+<hr>
+
+<!-- ================= PARÁGRAFOS ================= -->
+
+<h2>&lt;p&gt; — Parágrafos</h2>
+
+<p>
+Representa um bloco de texto.
+Cria espaçamento automático antes e depois.
+</p>
+
+<pre>
+&lt;p&gt;Este é um parágrafo.&lt;/p&gt;
+</pre>
+
+<p><strong>Erro comum:</strong> usar <code>&lt;br&gt;</code> repetidamente no lugar de parágrafos.</p>
+
+<hr>
+
+<!-- ================= QUEBRA E DIVISÃO ================= -->
+
+<h2>&lt;br&gt; — Quebra de linha</h2>
+
+<p>
+Força uma quebra de linha sem criar novo parágrafo.
+</p>
+
+<pre>
+Linha 1&lt;br&gt;
+Linha 2
+</pre>
+
+<p><strong>Use apenas quando a quebra fizer sentido semântico.</strong></p>
+
+<hr>
+
+<h2>&lt;hr&gt; — Divisão temática</h2>
+
+<p>
+Representa uma mudança de assunto ou seção.
+É semântica, não apenas visual.
+</p>
+
+<pre>
+&lt;hr&gt;
+</pre>
+
+<hr>
+
+<!-- ================= ÊNFASE ================= -->
+
+<h2>&lt;strong&gt; — Importância forte</h2>
+
+<p>
+Indica que o texto tem <strong>importância semântica</strong>.
+Leitores de tela enfatizam essa parte.
+</p>
+
+<pre>
+&lt;strong&gt;Atenção!&lt;/strong&gt;
+</pre>
+
+<hr>
+
+<h2>&lt;em&gt; — Ênfase</h2>
+
+<p>
+Dá ênfase ao texto, alterando o significado da frase.
+</p>
+
+<pre>
+Eu &lt;em&gt;não&lt;/em&gt; disse isso.
+</pre>
+
+<p><strong>Diferença importante:</strong></p>
+<ul>
+    <li><code>&lt;strong&gt;</code> = importância</li>
+    <li><code>&lt;em&gt;</code> = ênfase</li>
+</ul>
+
+<hr>
+
+<!-- ================= FORMATAÇÃO COMPLEMENTAR ================= -->
+
+<h2>&lt;mark&gt; — Destaque</h2>
+
+<p>
+Marca visualmente um trecho relevante.
+</p>
+
+<pre>
+&lt;mark&gt;Texto destacado&lt;/mark&gt;
+</pre>
+
+<hr>
+
+<h2>&lt;small&gt; — Texto secundário</h2>
+
+<p>
+Usado para observações, direitos autorais ou notas.
+</p>
+
+<pre>
+&lt;small&gt;© 2026&lt;/small&gt;
+</pre>
+
+<hr>
+
+<h2>&lt;sub&gt; e &lt;sup&gt; — Subscrito e sobrescrito</h2>
+
+<pre>
+H&lt;sub&gt;2&lt;/sub&gt;O
+10&lt;sup&gt;2&lt;/sup&gt;
+</pre>
+
+<hr>
+
+<!-- ================= CITAÇÕES ================= -->
+
+<h2>&lt;q&gt; — Citação curta</h2>
+
+<p>
+Usada para citações dentro do texto.
+</p>
+
+<pre>
+Ele disse: &lt;q&gt;HTML é semântica&lt;/q&gt;
+</pre>
+
+<hr>
+
+<h2>&lt;blockquote&gt; — Citação longa</h2>
+
+<p>
+Usada para citações em bloco.
+</p>
+
+<pre>
+&lt;blockquote&gt;
+  O HTML descreve o significado do conteúdo.
+&lt;/blockquote&gt;
+</pre>
+
+<hr>
+
+<h2>&lt;cite&gt; — Fonte da citação</h2>
+
+<pre>
+&lt;cite&gt;MDN Web Docs&lt;/cite&gt;
+</pre>
+
+<hr>
+
+<!-- ================= CÓDIGO ================= -->
+
+<h2>&lt;code&gt; — Código</h2>
+
+<p>
+Representa trechos de código em linha.
+</p>
+
+<pre>
+Use &lt;code&gt;&lt;p&gt;&lt;/code&gt; para parágrafos.
+</pre>
+
+<hr>
+
+<h2>&lt;pre&gt; — Texto pré-formatado</h2>
+
+<p>
+Preserva espaços, tabs e quebras de linha.
+</p>
+
+<pre>
+&lt;pre&gt;
+Linha 1
+    Linha 2
+&lt;/pre&gt;
+</pre>
+
+<p><strong>Dica:</strong> combine <code>&lt;pre&gt;</code> com <code>&lt;code&gt;</code>.</p>
+
+<hr>
+
+<!-- ================= OUTRAS TAGS TEXTUAIS ================= -->
+
+<h2>&lt;span&gt; — Contêiner inline</h2>
+
+<p>
+Não tem significado semântico.
+Usado para estilização pontual.
+</p>
+
+<pre>
+&lt;span&gt;Texto&lt;/span&gt;
+</pre>
+
+<p><strong>Use com CSS, não para estruturar conteúdo.</strong></p>
+
+<hr>
+
+<h2>&lt;abbr&gt; — Abreviações</h2>
+
+<p>
+Explica siglas e abreviações.
+</p>
+
+<pre>
+&lt;abbr title="HyperText Markup Language"&gt;HTML&lt;/abbr&gt;
+</pre>
+
+<hr>
+
+<h2>&lt;del&gt; e &lt;ins&gt; — Texto removido e inserido</h2>
+
+<pre>
+&lt;del&gt;Antigo&lt;/del&gt;
+&lt;ins&gt;Novo&lt;/ins&gt;
+</pre>
+
+<hr>
+
+<p>
+<a href="../index.html">⬅ Voltar ao Dicionário</a>
+</p>
+
+</body>
+</html>

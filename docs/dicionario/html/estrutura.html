@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <!-- ================= METADADOS ================= -->
+
+    <!-- Codificação de caracteres -->
+    <meta charset="UTF-8">
+
+    <!-- Compatibilidade com dispositivos móveis -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Descrição da página (SEO) -->
+    <meta name="description" content="Dicionário técnico sobre a estrutura do HTML">
+
+    <!-- Autor da página -->
+    <meta name="author" content="Rodrigo">
+
+    <!-- Palavras-chave (pouco usado hoje, mas ainda válido) -->
+    <meta name="keywords" content="HTML, CSS, estrutura HTML, web">
+
+    <!-- Título da aba -->
+    <title>Estrutura do Documento HTML</title>
+
+    <!-- Ícone da aba -->
+    <link rel="shortcut icon" href="../../imagens/estudar.ico" type="image/x-icon">
+
+    <!-- CSS externo -->
+    <link rel="stylesheet" href="../../style.css">
+
+</head>
+<body>
+
+<h1>Estrutura do Documento HTML</h1>
+
+<p>
+Todo documento HTML segue uma estrutura básica obrigatória.
+Ela define como o navegador interpreta o conteúdo,
+garantindo compatibilidade, acessibilidade e padronização.
+</p>
+
+<hr>
+
+<!-- ================= DOCTYPE ================= -->
+
+<h2>&lt;!DOCTYPE&gt;</h2>
+<p>
+O <code>&lt;!DOCTYPE html&gt;</code> informa ao navegador que o documento
+segue o padrão <strong>HTML5</strong>.
+Ele deve ser a <strong>primeira linha do arquivo</strong>.
+</p>
+
+<pre>
+&lt;!DOCTYPE html&gt;
+</pre>
+
+<p><strong>Erro comum:</strong> omitir o DOCTYPE ou usar versões antigas.</p>
+
+<hr>
+
+<!-- ================= HTML ================= -->
+
+<h2>&lt;html&gt;</h2>
+<p>
+Elemento raiz do documento. Todo o conteúdo HTML deve estar dentro dele.
+O atributo <code>lang</code> define o idioma da página, essencial
+para acessibilidade e SEO.
+</p>
+
+<pre>
+&lt;html lang="pt-br"&gt;
+&lt;/html&gt;
+</pre>
+
+<p><strong>Boas práticas:</strong></p>
+<ul>
+    <li>Sempre definir <code>lang</code></li>
+    <li>Usar códigos de idioma corretos (pt-br, en-us)</li>
+</ul>
+
+<hr>
+
+<!-- ================= HEAD ================= -->
+
+<h2>&lt;head&gt;</h2>
+<p>
+Contém informações <strong>não visíveis</strong> da página:
+metadados, links de estilos, scripts e título.
+</p>
+
+<pre>
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;title&gt;Minha página&lt;/title&gt;
+&lt;/head&gt;
+</pre>
+
+<hr>
+
+<!-- ================= META ================= -->
+
+<h2>&lt;meta&gt;</h2>
+<p>
+Define metadados sobre o documento. É uma tag sem fechamento.
+</p>
+
+<h3>charset</h3>
+<pre>
+&lt;meta charset="UTF-8"&gt;
+</pre>
+
+<h3>viewport</h3>
+<pre>
+&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+</pre>
+
+<h3>SEO e informação</h3>
+<pre>
+&lt;meta name="description" content="Descrição da página"&gt;
+&lt;meta name="author" content="Autor"&gt;
+</pre>
+
+<hr>
+
+<!-- ================= TITLE ================= -->
+
+<h2>&lt;title&gt;</h2>
+<p>
+Define o título exibido na aba do navegador e nos resultados de busca.
+</p>
+
+<pre>
+&lt;title&gt;Título da Página&lt;/title&gt;
+</pre>
+
+<p><strong>Importante:</strong> cada página deve ter um título único.</p>
+
+<hr>
+
+<!-- ================= LINK ================= -->
+
+<h2>&lt;link&gt;</h2>
+<p>
+Usado para vincular recursos externos, principalmente arquivos CSS.
+</p>
+
+<pre>
+&lt;link rel="stylesheet" href="style.css"&gt;
+</pre>
+
+<p>
+Outros usos comuns:
+</p>
+
+<pre>
+&lt;link rel="icon" href="favicon.ico"&gt;
+</pre>
+
+<hr>
+
+<!-- ================= SCRIPT ================= -->
+
+<h2>&lt;script&gt;</h2>
+<p>
+Usado para incluir ou escrever código JavaScript.
+Pode ser colocado no <code>head</code> ou no final do <code>body</code>.
+</p>
+
+<h3>Script externo</h3>
+<pre>
+&lt;script src="script.js"&gt;&lt;/script&gt;
+</pre>
+
+<h3>Script interno</h3>
+<pre>
+&lt;script&gt;
+  alert("Olá!");
+&lt;/script&gt;
+</pre>
+
+<p><strong>Boa prática:</strong> scripts no final do <code>body</code>.</p>
+
+<hr>
+
+<!-- ================= BODY ================= -->
+
+<h2>&lt;body&gt;</h2>
+<p>
+Contém <strong>todo o conteúdo visível</strong> da página:
+textos, imagens, links, listas, formulários etc.
+</p>
+
+<pre>
+&lt;body&gt;
+  &lt;h1&gt;Conteúdo&lt;/h1&gt;
+&lt;/body&gt;
+</pre>
+
+<hr>
+
+<!-- ================= COMENTÁRIOS ================= -->
+
+<h2>Comentários HTML</h2>
+<p>
+Comentários servem para documentação e não aparecem no navegador.
+</p>
+
+<pre>
+&lt;!-- Este é um comentário --&gt;
+</pre>
+
+<p><strong>Atenção:</strong> comentários ainda podem ser vistos no código-fonte.</p>
+
+<hr>
+
+<p>
+<a href="../index.html">⬅ Voltar ao Dicionário</a>
+</p>
+
+</body>
+</html>
