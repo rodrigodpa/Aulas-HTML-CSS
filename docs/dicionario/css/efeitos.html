@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pseudoclasses e Pseudoelementos</title>
+    <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+
+<h1>Pseudoclasses e Pseudoelementos</h1>
+
+<p>
+CSS oferece seletores especiais para estilizar elementos com base em seu <strong>estado</strong> (pseudoclasses) ou para inserir conteúdo <strong>adicional</strong> sem alterar o HTML (pseudoelementos).
+</p>
+
+<hr>
+
+<!-- ================= PSEUDOCLASSES ================= -->
+
+<h2>Pseudoclasses (:) — Estados</h2>
+
+<p>
+Pseudoclasses são usadas para definir o estado de um elemento. Elas começam com <strong>um único ponto e vírgula</strong> (<code>:</code>).
+</p>
+
+<h3>1. Estados de Interação</h3>
+<pre>
+a:hover   { color: red; }    /* Cursor sobre o elemento */
+a:active  { color: green; }  /* Durante o clique */
+input:focus { border: 2px solid blue; } /* Foco via teclado/clique */
+</pre>
+
+<h3>2. Estados de Estrutura (Seletores de Posição)</h3>
+<p>Essenciais para lidar com listas, tabelas e elementos repetidos.</p>
+<pre>
+li:first-child { font-weight: bold; } /* Primeiro item */
+li:last-child  { border-bottom: none; } /* Último item */
+li:nth-child(even) { background: #f0f0f0; } /* Itens pares */
+li:nth-child(odd)  { background: #fff; }    /* Itens ímpares */
+</pre>
+
+<hr>
+
+<!-- ================= PSEUDOELEMENTOS ================= -->
+
+<h2>Pseudoelementos (::) — Conteúdo</h2>
+
+<p>
+Pseudoelementos são usados para estilizar <strong>partes específicas</strong> de um elemento ou inserir conteúdo. Eles começam com <strong>dois pontos e vírgula</strong> (<code>::</code>).
+</p>
+
+<h3>1. ::before e ::after</h3>
+<p>
+Permitem inserir conteúdo antes ou depois do conteúdo real de um elemento. <strong>Requerem a propriedade <code>content</code></strong>.
+</p>
+<pre>
+.botao::before {
+  content: "🚀 ";
+}
+</pre>
+<p><strong>Dica:</strong> Muito usados para ícones, divisores decorativos e efeitos de hover complexos.</p>
+
+<h3>2. ::selection</h3>
+<p>Estiliza a parte do texto selecionada pelo usuário.</p>
+<pre>
+::selection {
+  background: yellow;
+  color: black;
+}
+</pre>
+
+<h3>3. ::placeholder</h3>
+<p>Estiliza o texto de dica dentro de um <code>input</code>.</p>
+<pre>
+input::placeholder {
+  color: #999;
+  font-style: italic;
+}
+</pre>
+
+<hr>
+
+<!-- ================= DIFERENÇA TÉCNICA ================= -->
+
+<h2>Diferença entre : e ::</h2>
+
+<ul>
+    <li><strong>Pseudoclass (<code>:</code>)</strong>: Refere-se a um <strong>estado</strong> do elemento (ex: ele está sendo clicado? ele é o primeiro filho?).</li>
+    <li><strong>Pseudoelemento (<code>::</code>)</strong>: Refere-se a uma <strong>subparte</strong> do elemento ou insere um <strong>novo elemento virtual</strong> (ex: o texto dentro da caixa, ou um ícone antes do texto).</li>
+</ul>
+
+<hr>
+
+<!-- ================= RESUMO DE EFEITOS ================= -->
+
+<h2>Resumo de Seletores Avançados</h2>
+
+<ul>
+    <li><code>:not(seletor)</code> — Seleciona tudo, <strong>exceto</strong> o que for passado.</li>
+    <li><code>:empty</code> — Seleciona elementos que não possuem conteúdo.</li>
+    <li><code>:root</code> — Seleciona o elemento raiz (geralmente <code>&lt;html&gt;</code>), ideal para <strong>Variáveis CSS</strong>.</li>
+</ul>
+
+<pre>
+:root {
+  --cor-principal: #2563eb;
+}
+</pre>
+
+<hr>
+
+<p>
+<a href="../index.html">⬅ Voltar ao Dicionário</a>
+</p>
+
+</body>
+</html>

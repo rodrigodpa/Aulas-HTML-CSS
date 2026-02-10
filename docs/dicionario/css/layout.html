@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout e Posicionamento em CSS</title>
+    <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+
+<h1>Layout e Posicionamento</h1>
+
+<p>
+Layout em CSS define como os elementos são organizados no espaço da tela. Evoluímos de fluxos de texto simples para sistemas complexos de duas dimensões (Grid) e distribuições flexíveis (Flexbox).
+</p>
+
+<hr>
+
+<!-- ================= DISPLAY ================= -->
+
+<h2>display — O comportamento do elemento</h2>
+
+<p>
+Define o tipo de "caixa" que o elemento gera. É a propriedade mais importante para o fluxo do documento.
+</p>
+
+<pre>
+div {
+  display: block;
+}
+</pre>
+
+<h3>Valores Principais</h3>
+<ul>
+    <li><code>block</code> — Ocupa toda a largura, começa em nova linha (ex: div, p, h1).</li>
+    <li><code>inline</code> — Ocupa apenas o tamanho do conteúdo, não aceita width/height (ex: span, a).</li>
+    <li><code>inline-block</code> — Flui como texto, mas aceita dimensões de bloco.</li>
+    <li><code>none</code> — Remove o elemento e seu espaço do documento.</li>
+    <li><code>flex</code> — Transforma o elemento em um flex-container.</li>
+    <li><code>grid</code> — Transforma o elemento em um grid-container.</li>
+</ul>
+
+<hr>
+
+<!-- ================= POSITION ================= -->
+
+<h2>position — Posicionamento Físico</h2>
+
+<p>
+Define como um elemento é posicionado em relação ao fluxo, ao pai ou à tela.
+</p>
+
+<pre>
+.box {
+  position: absolute;
+  top: 20px;
+  right: 10px;
+}
+</pre>
+
+<h3>Valores e Comportamentos</h3>
+<ul>
+    <li><code>static</code> — Padrão. Segue o fluxo natural da página.</li>
+    <li><code>relative</code> — Posicionado em relação a **si mesmo**. O espaço original é preservado.</li>
+    <li><code>absolute</code> — Posicionado em relação ao **ancestral posicionado** mais próximo (qualquer um que não seja static). Sai do fluxo.</li>
+    <li><code>fixed</code> — Posicionado em relação à **janela do navegador (viewport)**. Não move no scroll.</li>
+    <li><code>sticky</code> — Alterna entre <code>relative</code> e <code>fixed</code> dependendo do scroll.</li>
+</ul>
+
+<h3>Propriedades de Auxílio</h3>
+<p>Usadas apenas quando <code>position</code> não é <code>static</code>:</p>
+<ul>
+    <li><code>top</code>, <code>bottom</code>, <code>left</code>, <code>right</code></li>
+    <li><code>z-index</code> — Controla a pilha no eixo Z (profundidade).</li>
+</ul>
+
+<hr>
+
+<!-- ================= FLEXBOX CONTAINER ================= -->
+
+<h2>Flexbox — Container (Pai)</h2>
+
+<p>
+Layout unidimensional (linha ou coluna). Foca na distribuição de espaço e alinhamento.
+</p>
+
+<pre>
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+</pre>
+
+<h3>Propriedades do Pai</h3>
+<ul>
+    <li><code>flex-direction</code> — Direção: <code>row</code>, <code>column</code>, <code>row-reverse</code>, <code>column-reverse</code>.</li>
+    <li><code>flex-wrap</code> — Quebra de linha: <code>nowrap</code>, <code>wrap</code>.</li>
+    <li><code>justify-content</code> — Alinhamento no **eixo principal**: <code>flex-start</code>, <code>center</code>, <code>space-between</code>, <code>space-around</code>, <code>space-evenly</code>.</li>
+    <li><code>align-items</code> — Alinhamento no **eixo transversal**: <code>stretch</code>, <code>center</code>, <code>flex-start</code>, <code>flex-end</code>.</li>
+    <li><code>gap</code> — Espaçamento entre os itens flex.</li>
+</ul>
+
+<hr>
+
+<!-- ================= FLEXBOX ITEMS ================= -->
+
+<h2>Flexbox — Items (Filhos)</h2>
+
+<p>Controlam como cada item individual se comporta dentro do flex-container.</p>
+
+<ul>
+    <li><code>flex-grow</code> — Capacidade de crescer (0 = não cresce).</li>
+    <li><code>flex-shrink</code> — Capacidade de encolher.</li>
+    <li><code>flex-basis</code> — Tamanho base antes da distribuição de espaço.</li>
+    <li><code>align-self</code> — Sobrescreve o <code>align-items</code> para um item específico.</li>
+    <li><code>order</code> — Altera a ordem visual de exibição.</li>
+</ul>
+
+<hr>
+
+<!-- ================= CSS GRID ================= -->
+
+<h2>CSS Grid Layout</h2>
+
+<p>
+Layout bidimensional (linhas e colunas simultâneas). O sistema mais poderoso do CSS.
+</p>
+
+<pre>
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; /* 3 colunas iguais */
+  grid-template-rows: auto;
+  gap: 20px;
+}
+</pre>
+
+<h3>Conceitos de Grid</h3>
+<ul>
+    <li><code>grid-template-columns</code> — Define colunas (ex: <code>100px 1fr 20%</code>).</li>
+    <li><code>grid-template-areas</code> — Cria layouts nomeando áreas.</li>
+    <li><code>fr</code> — Unidade de fração (ocupa o espaço disponível).</li>
+    <li><code>repeat(3, 1fr)</code> — Atalho para 3 colunas iguais.</li>
+</ul>
+
+<h3>Posicionamento no Grid (Filhos)</h3>
+<pre>
+.item {
+  grid-column: 1 / 3; /* Ocupa da linha 1 até a 3 */
+  grid-row: 2;
+}
+</pre>
+
+<hr>
+
+<!-- ================= FLOAT E CLEAR ================= -->
+
+<h2>Float e Clear (Legado/Específico)</h2>
+
+<p>
+Antigamente usado para layout, hoje serve principalmente para envolver texto em volta de imagens.
+</p>
+
+<pre>
+img { float: left; margin: 10px; }
+.limpeza { clear: both; }
+</pre>
+
+<hr>
+
+<!-- ================= RESUMO ================= -->
+
+<h2>Resumo de Escolha</h2>
+
+<ul>
+    <li><strong>Position:</strong> Use para sobreposições, menus fixos ou elementos isolados.</li>
+    <li><strong>Flexbox:</strong> Use para alinhar elementos em uma direção (menus, barras laterais, centralização).</li>
+    <li><strong>Grid:</strong> Use para a estrutura geral da página ou layouts complexos de galeria.</li>
+</ul>
+
+<hr>
+
+<p>
+<a href="../index.html">⬅ Voltar ao Dicionário</a>
+</p>
+
+</body>
+</html>

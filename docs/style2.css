@@ -1,0 +1,98 @@
+@charset "UTF-8";
+/* 🎨 Variáveis de cor */
+:root {
+  /* Tons principais */
+  --cor-bg: #ffffff;           /* fundo claro */
+  --cor-texto: #2a2a2a;        /* texto escuro para legibilidade */
+  --cor-principal: #4a90e2;    /* azul marcante para destaques */
+  --cor-secundaria: #50e3c2;   /* verde-água suave para ênfase positiva */
+  
+  /* Acentos e contrastes */
+  --cor-accento: #f5a623;      /* cor de destaque para links/hover */
+  --cor-separador: #d8d8d8;    /* linha leve para seções */
+  --cor-bg-header: #f7f9fc;    /* fundo discreto do cabeçalho */
+  --cor-bg-card: #fdfdfd;       /* fundo suave para caixas */
+}
+
+/* 🖋 Tipografia base */
+html {
+  font-family: "Inter", sans-serif; /* fonte moderna e legível */
+  font-size: 16px;
+  scroll-behavior: smooth;
+  line-height: 1.6;
+  background: var(--cor-bg);
+  color: var(--cor-texto);
+}
+
+/* 🌐 Linhas gerais de layout */
+body {
+  margin: 0;
+  padding: 1rem;
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* 🗂 Cabeçalhos */
+h1, h2, h3 {
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--cor-principal);
+}
+
+h1 { font-size: 2rem; }
+h2 { font-size: 1.75rem; }
+h3 { font-size: 1.5rem; }
+
+/* 📄 Texto padrão e listas */
+p, li {
+  font-size: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+ul, ol {
+  padding-left: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+/* 🔗 Links */
+a {
+  color: var(--cor-principal);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+a:hover, a:focus {
+  color: var(--cor-accento);
+  text-decoration: underline;
+}
+
+/* 🗃 Seções e cartões */
+section {
+  background: var(--cor-bg-card);
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  border: 1px solid var(--cor-separador);
+  border-radius: 0.35rem;
+}
+
+/* 📌 Destaques em listas ou itens */
+strong {
+  color: var(--cor-secundaria);
+}
+
+/* 📏 Separadores */
+hr {
+  border: none;
+  border-top: 1px solid var(--cor-separador);
+  margin: 2rem 0;
+}
+
+/* 📱 Responsividade simples */
+@media (max-width: 600px) {
+  html { font-size: 15px; }
+  h1 { font-size: 1.75rem; }
+  h2 { font-size: 1.5rem; }
+}

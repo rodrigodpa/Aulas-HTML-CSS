@@ -2,74 +2,212 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Cores em CSS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cores e Backgrounds em CSS</title>
     <link rel="stylesheet" href="../../style.css">
-    <style>
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background-color: #f4f4f4;
-            color: #222;
-            padding: 20px;
-        }
-
-        h1 {
-            color: darkblue;
-        }
-
-        h2 {
-            color: rgb(120, 0, 200);
-        }
-
-        .hex {
-            color: #e63946;
-        }
-
-        .rgb {
-            color: rgb(46, 196, 182);
-        }
-
-        .rgba {
-            background-color: rgba(255, 183, 3, 0.4);
-            padding: 10px;
-        }
-
-        .hsl {
-            color: hsl(120, 60%, 35%);
-        }
-
-        .caixa {
-            background-color: #1d3557;
-            color: white;
-            padding: 15px;
-            border-radius: 8px;
-            margin-top: 10px;
-        }
-    </style>
 </head>
 <body>
 
-    <h1>Cores em CSS</h1>
+<h1>Cores e Backgrounds em CSS</h1>
 
-    <p>O CSS permite definir cores de várias formas.</p>
+<p>
+CSS utiliza diversos sistemas para definir **cores** e **fundos**. 
+O uso correto de cores impacta diretamente a identidade visual, a acessibilidade (contraste) e a experiência do usuário.
+</p>
 
-    <h2>1. Nome da cor</h2>
-    <p style="color: red;">Exemplo usando nome da cor (red)</p>
+<hr>
 
-    <h2>2. Hexadecimal</h2>
-    <p class="hex">Cor definida em hexadecimal (#e63946)</p>
+<!-- ================= FORMATOS DE CORES ================= -->
 
-    <h2>3. RGB</h2>
-    <p class="rgb">Cor definida em RGB (46, 196, 182)</p>
+<h2>Formatos de Cores</h2>
 
-    <h2>4. RGBA (com transparência)</h2>
-    <p class="rgba">RGBA permite controlar a opacidade</p>
+<p>
+Existem várias formas de declarar uma cor no CSS. O navegador converte todas para um valor interno, mas cada formato é útil em cenários diferentes.
+</p>
 
-    <h2>5. HSL</h2>
-    <p class="hsl">Cor definida em HSL</p>
+<h3>1. Color Keywords (Nomes)</h3>
+<p>Nomes pré-definidos como <code>red</code>, <code>blue</code>, <code>transparent</code>.</p>
+<pre>
+p { color: RebeccaPurple; }
+</pre>
 
-    <div class="caixa">
-        Caixa com fundo escuro e texto claro
-    </div>
+<h3>2. Hexadecimal (HEX)</h3>
+<p>Baseado em 3 ou 6 dígitos (RRGGBB). Opcionalmente aceita 8 dígitos para transparência (RRGGBBAA).</p>
+<pre>
+h1 { color: #ff5733; }
+span { color: #ff573380; } /* 50% de opacidade */
+</pre>
+
+<h3>3. RGB e RGBA</h3>
+<p>Define a mistura de Red, Green e Blue (0-255). O <code>a</code> define o canal Alpha (transparência 0 a 1).</p>
+<pre>
+div { background-color: rgb(255, 87, 51); }
+div { background-color: rgba(255, 87, 51, 0.5); }
+</pre>
+
+<h3>4. HSL e HSLA</h3>
+<p>Hue (Matiz 0-360), Saturation (Saturação %) e Lightness (Luminosidade %). Mais intuitivo para humanos.</p>
+<pre>
+section { background-color: hsl(12, 100%, 60%); }
+</pre>
+
+<hr>
+
+<!-- ================= COLOR ================= -->
+
+<h2>color — Cor do Texto</h2>
+<p>Define a cor da fonte e de decorações de texto.</p>
+<pre>
+body { color: #222222; }
+</pre>
+
+<hr>
+
+<!-- ================= BACKGROUND-COLOR ================= -->
+
+<h2>background-color — Cor de Fundo</h2>
+<p>Define uma cor sólida para o fundo do elemento.</p>
+<pre>
+.caixa { background-color: lightgray; }
+</pre>
+
+<hr>
+
+<!-- ================= OPACITY ================= -->
+
+<h2>opacity — Opacidade</h2>
+<p>Define a transparência de <strong>todo o elemento</strong> (incluindo o texto dentro dele).</p>
+<pre>
+img { opacity: 0.7; }
+</pre>
+<p><strong>Diferença crucial:</strong> <code>opacity</code> afeta os filhos; <code>rgba()</code> afeta apenas a cor específica.</p>
+
+<hr>
+
+<!-- ================= LINEAR GRADIENT ================= -->
+
+<h2>linear-gradient() — Gradiente Linear</h2>
+<p>Cria uma transição suave entre duas ou mais cores em uma linha reta. É aplicado na propriedade <code>background</code> ou <code>background-image</code>.</p>
+
+<pre>
+.gradiente {
+  background: linear-gradient(to right, red, yellow);
+}
+</pre>
+
+<h3>Direções possíveis</h3>
+<ul>
+    <li><code>to top</code> / <code>to bottom</code></li>
+    <li><code>to left</code> / <code>to right</code></li>
+    <li><code>to bottom right</code> (diagonais)</li>
+    <li><code>45deg</code> (ângulos específicos)</li>
+</ul>
+
+<hr>
+
+<!-- ================= RADIAL GRADIENT ================= -->
+
+<h2>radial-gradient() — Gradiente Radial</h2>
+<p>O gradiente surge de um ponto central (círculo ou elipse).</p>
+
+<pre>
+.circulo {
+  background: radial-gradient(circle, blue, green);
+}
+</pre>
+
+<hr>
+
+<!-- ================= BACKGROUND-IMAGE ================= -->
+
+<h2>background-image — Imagem de Fundo</h2>
+<p>Coloca uma imagem atrás do conteúdo.</p>
+<pre>
+header {
+  background-image: url('imagem.jpg');
+}
+</pre>
+
+<hr>
+
+<!-- ================= BACKGROUND-REPEAT ================= -->
+
+<h2>background-repeat — Repetição</h2>
+<p>Define se a imagem de fundo deve se repetir.</p>
+<ul>
+    <li><code>repeat</code> (padrão)</li>
+    <li><code>no-repeat</code> (uma única vez)</li>
+    <li><code>repeat-x</code> (apenas horizontal)</li>
+    <li><code>repeat-y</code> (apenas vertical)</li>
+</ul>
+
+<hr>
+
+<!-- ================= BACKGROUND-SIZE ================= -->
+
+<h2>background-size — Tamanho do Fundo</h2>
+<p>Controla como a imagem é redimensionada.</p>
+<ul>
+    <li><code>auto</code> (tamanho original)</li>
+    <li><code>cover</code> (preenche tudo, pode cortar bordas)</li>
+    <li><code>contain</code> (mostra a imagem inteira, pode sobrar espaço)</li>
+    <li><code>100% 100%</code> (estica para preencher)</li>
+</ul>
+
+<hr>
+
+<!-- ================= BACKGROUND-ATTACHMENT ================= -->
+
+<h2>background-attachment — Fixação</h2>
+<p>Define se o fundo rola com a página ou fica fixo.</p>
+<ul>
+    <li><code>scroll</code> (padrão)</li>
+    <li><code>fixed</code> (efeito de paralaxe - o fundo não se move)</li>
+</ul>
+
+<hr>
+
+<!-- ================= BACKGROUND-POSITION ================= -->
+
+<h2>background-position — Posicionamento</h2>
+<p>Define o ponto inicial da imagem de fundo.</p>
+<pre>
+div { background-position: center center; }
+</pre>
+<ul>
+    <li><code>top</code>, <code>bottom</code>, <code>left</code>, <code>right</code>, <code>center</code></li>
+    <li>Valores em <code>px</code> ou <code>%</code></li>
+</ul>
+
+<hr>
+
+<!-- ================= SHORTHAND BACKGROUND ================= -->
+
+<h2>background — Shorthand</h2>
+<p>Combina todas as propriedades de fundo em uma única linha.</p>
+<pre>
+div {
+  background: #000 url('fundo.png') no-repeat center / cover fixed;
+}
+</pre>
+<p><strong>Ordem comum:</strong> color | image | repeat | position / size | attachment</p>
+
+<hr>
+
+<!-- ================= ACESSIBILIDADE ================= -->
+
+<h2>Acessibilidade e Boas Práticas</h2>
+<ul>
+    <li><strong>Contraste:</strong> Garanta que o texto seja legível sobre a cor de fundo (relação mínima de 4.5:1).</li>
+    <li><strong>Fallback:</strong> Ao usar gradientes ou imagens, sempre defina uma <code>background-color</code> sólida para caso o recurso falhe.</li>
+    <li><strong>Daltonismo:</strong> Não use apenas cores para transmitir informação (ex: use ícones além do vermelho para erros).</li>
+</ul>
+
+<hr>
+
+<p>
+<a href="../index.html">⬅ Voltar ao Dicionário</a>
+</p>
 
 </body>
 </html>

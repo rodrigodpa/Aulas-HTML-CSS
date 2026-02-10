@@ -2,68 +2,216 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Box Model em CSS</title>
     <link rel="stylesheet" href="../../style.css">
-    <style>
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background-color: #f1f1f1;
-            padding: 20px;
-        }
-
-        h1 {
-            margin-bottom: 10px;
-        }
-
-        .caixa {
-            width: 300px;
-            height: auto;
-
-            background-color: #e0f2fe;
-
-            padding: 20px;
-            border: 5px solid #0284c7;
-            margin: 30px;
-
-            text-align: center;
-        }
-
-        .explicacao {
-            background-color: #fff;
-            padding: 15px;
-            border-left: 5px solid #333;
-            margin-bottom: 20px;
-        }
-
-        .box-sizing {
-            width: 300px;
-            padding: 20px;
-            border: 5px solid red;
-
-            box-sizing: border-box;
-            background-color: #fee2e2;
-            margin: 30px;
-        }
-    </style>
 </head>
 <body>
 
-    <h1>Box Model em CSS</h1>
+<h1>Box Model — Modelo de Caixas</h1>
 
-    <div class="explicacao">
-        O Box Model é composto por:
-        <strong>conteúdo → padding → borda → margem</strong>.
-    </div>
+<p>
+No CSS, cada elemento é representado como uma caixa retangular. O <strong>Box Model</strong> descreve as camadas que compõem essa caixa: conteúdo, preenchimento, borda e margem.
+</p>
 
-    <h2>Box padrão</h2>
-    <div class="caixa">
-        Conteúdo da caixa
-    </div>
+<hr>
 
-    <h2>Box com box-sizing: border-box</h2>
-    <div class="box-sizing">
-        O tamanho total não aumenta
-    </div>
+<!-- ================= O CONCEITO ================= -->
+
+<h2>As Camadas do Box Model</h2>
+
+<p>
+Do centro para fora, as camadas são:
+</p>
+
+<ul>
+    <li><strong>Content (Conteúdo):</strong> Onde o texto e as imagens aparecem.</li>
+    <li><strong>Padding (Preenchimento):</strong> Espaço interno entre o conteúdo e a borda.</li>
+    <li><strong>Border (Borda):</strong> Uma linha que envolve o preenchimento e o conteúdo.</li>
+    <li><strong>Margin (Margem):</strong> Espaço externo que separa o elemento de outros elementos.</li>
+</ul>
+
+<hr>
+
+<!-- ================= WIDTH E HEIGHT ================= -->
+
+<h2>Width e Height — Largura e Altura</h2>
+
+<p>
+Definem as dimensões da área de conteúdo do elemento.
+</p>
+
+<pre>
+div {
+  width: 300px;
+  height: 200px;
+}
+</pre>
+
+<h3>Variações de Limite</h3>
+<ul>
+    <li><code>min-width</code> / <code>min-height</code> — Tamanho mínimo.</li>
+    <li><code>max-width</code> / <code>max-height</code> — Tamanho máximo (essencial para responsividade).</li>
+</ul>
+
+<hr>
+
+<!-- ================= BOX-SIZING ================= -->
+
+<h2>box-sizing — Cálculo do Tamanho</h2>
+
+<p>
+Define como a largura e altura totais são calculadas. Esta é uma das propriedades mais críticas do CSS.
+</p>
+
+<pre>
+/* Padrão do navegador */
+div { box-sizing: content-box; }
+
+/* Recomendado para layouts modernos */
+div { box-sizing: border-box; }
+</pre>
+
+<h3>Valores possíveis</h3>
+<ul>
+    <li><code>content-box</code>: <code>width</code> define apenas o conteúdo. Padding e border são **somados** por fora (fazendo a caixa crescer).</li>
+    <li><code>border-box</code>: <code>width</code> define o tamanho total da caixa. Padding e border são **incluídos** dentro do valor.</li>
+</ul>
+
+<p><strong>Dica:</strong> A maioria dos desenvolvedores usa <code>border-box</code> em todos os elementos.</p>
+
+<hr>
+
+<!-- ================= PADDING ================= -->
+
+<h2>padding — Preenchimento Interno</h2>
+
+<p>
+Cria espaço dentro do elemento. O fundo do elemento (background) é visível no padding.
+</p>
+
+<pre>
+div {
+  padding: 20px; /* Todos os lados */
+}
+</pre>
+
+<h3>Shorthand (Ordem do relógio)</h3>
+<ul>
+    <li><code>padding: 10px;</code> — Todos os lados.</li>
+    <li><code>padding: 10px 20px;</code> — [Top/Bottom] [Left/Right].</li>
+    <li><code>padding: 10px 5px 15px;</code> — [Top] [Left/Right] [Bottom].</li>
+    <li><code>padding: 10px 20px 30px 40px;</code> — [Top] [Right] [Bottom] [Left].</li>
+</ul>
+
+<hr>
+
+<!-- ================= MARGIN ================= -->
+
+<h2>margin — Margem Externa</h2>
+
+<p>
+Cria espaço fora do elemento. Margens são transparentes.
+</p>
+
+<pre>
+div {
+  margin: 0 auto; /* Centraliza elementos de bloco horizontalmente */
+}
+</pre>
+
+<h3>Margin Collapse (Colapso de Margem)</h3>
+<p>
+Quando dois elementos verticais se tocam, as margens não se somam; prevalece a maior.
+</p>
+
+<hr>
+
+<!-- ================= BORDER ================= -->
+
+<h2>border — Bordas</h2>
+
+<p>
+Propriedade composta para estilizar a linha em volta do elemento.
+</p>
+
+<pre>
+div {
+  border: 2px solid #000;
+}
+</pre>
+
+<h3>Subpropriedades</h3>
+<ul>
+    <li><code>border-width</code>: Espessura (px, thin, medium, thick).</li>
+    <li><code>border-style</code>: Estilo (solid, dashed, dotted, double, none).</li>
+    <li><code>border-color</code>: Cor.</li>
+    <li><code>border-radius</code>: Arredonda os cantos da caixa.</li>
+</ul>
+
+<hr>
+
+<!-- ================= OUTLINE ================= -->
+
+<h2>outline — Contorno</h2>
+
+<p>
+Semelhante à borda, mas **não ocupa espaço** no Box Model e não afeta o layout.
+</p>
+
+<pre>
+input:focus {
+  outline: 3px solid blue;
+}
+</pre>
+
+<ul>
+    <li>Não é afetado por <code>border-radius</code>.</li>
+    <li>Fica do lado de fora da borda.</li>
+</ul>
+
+<hr>
+
+<!-- ================= DISPLAY E O BOX MODEL ================= -->
+
+<h2>Comportamento de Bloco vs Linha</h2>
+
+<p>
+O Box Model se comporta de forma diferente dependendo da propriedade <code>display</code>:
+</p>
+
+<ul>
+    <li><strong>Block:</strong> Respeita todas as propriedades de largura, altura, margem e padding. Ocupa toda a largura disponível.</li>
+    <li><strong>Inline:</strong> <code>width</code> e <code>height</code> são ignorados. Margens e paddings laterais funcionam, mas verticais não afastam outros elementos.</li>
+    <li><strong>Inline-Block:</strong> O elemento flui como texto, mas aceita todas as propriedades de tamanho do Box Model.</li>
+</ul>
+
+<hr>
+
+<!-- ================= RESUMO ================= -->
+
+<h2>Resumo Visual</h2>
+
+<pre>
+  +---------------------------+
+  |          Margin           |
+  |  +---------------------+  |
+  |  |       Border        |  |
+  |  |  +---------------+  |  |
+  |  |  |    Padding    |  |  |
+  |  |  |  +---------+  |  |  |
+  |  |  |  | Content |  |  |  |
+  |  |  |  +---------+  |  |  |
+  |  |  +---------------+  |  |
+  |  +---------------------+  |
+  +---------------------------+
+</pre>
+
+<hr>
+
+<p>
+<a href="../index.html">⬅ Voltar ao Dicionário</a>
+</p>
 
 </body>
 </html>

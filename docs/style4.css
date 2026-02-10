@@ -1,0 +1,96 @@
+/* style.css */
+
+/* Configurações Globais */
+:root {
+    --primary-color: #2563eb;    /* Azul técnico */
+    --secondary-color: #475569;  /* Cinza azulado */
+    --bg-color: #f8fafc;         /* Fundo levemente cinza */
+    --code-bg: #1e293b;          /* Fundo do código (Dark) */
+    --code-text: #f1f5f9;        /* Texto do código */
+    --border-color: #e2e8f0;
+    --text-color: #1e293b;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    color: var(--primary-color);
+    border-bottom: 3px solid var(--primary-color);
+    padding-bottom: 10px;
+}
+
+h2 {
+    color: var(--secondary-color);
+    margin-top: 40px;
+    border-left: 5px solid var(--primary-color);
+    padding-left: 15px;
+}
+
+h3 {
+    color: #334155;
+    background-color: #e2e8f0;
+    padding: 5px 10px;
+    border-radius: 4px;
+}
+
+/* Links */
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Blocos de Código */
+pre {
+    background-color: var(--code-bg);
+    color: var(--code-text);
+    padding: 15px;
+    border-radius: 8px;
+    overflow-x: auto;
+    font-family: 'Cascadia Code', 'Courier New', Courier, monospace;
+    font-size: 0.9em;
+    border-left: 5px solid #10b981; /* Verde para destacar o código */
+}
+
+code {
+    background-color: #e2e8f0;
+    padding: 2px 5px;
+    border-radius: 4px;
+    font-family: monospace;
+    color: #be123c; /* Cor para código inline */
+}
+
+/* Listas */
+ul {
+    list-style-type: square;
+}
+
+li {
+    margin-bottom: 15px;
+}
+
+small {
+    color: #64748b;
+    display: block;
+    margin-top: 2px;
+}
+
+/* Linha horizontal decorativa */
+hr {
+    border: 0;
+    height: 1px;
+    background: var(--border-color);
+    margin: 40px 0;
+}

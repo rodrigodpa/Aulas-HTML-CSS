@@ -1,98 +1,265 @@
 @charset "UTF-8";
-/* 🎨 Variáveis de cor */
+
+/* ==========================================================================
+   🎨 VARIÁVEIS E TOKENS DE DESIGN
+   ========================================================================== */
 :root {
-  /* Tons principais */
-  --cor-bg: #ffffff;           /* fundo claro */
-  --cor-texto: #2a2a2a;        /* texto escuro para legibilidade */
-  --cor-principal: #4a90e2;    /* azul marcante para destaques */
-  --cor-secundaria: #50e3c2;   /* verde-água suave para ênfase positiva */
-  
-  /* Acentos e contrastes */
-  --cor-accento: #f5a623;      /* cor de destaque para links/hover */
-  --cor-separador: #d8d8d8;    /* linha leve para seções */
-  --cor-bg-header: #f7f9fc;    /* fundo discreto do cabeçalho */
-  --cor-bg-card: #fdfdfd;       /* fundo suave para caixas */
+    /* Cores de Marca */
+    --primary: #2563eb;         /* Azul Royal Técnico */
+    --primary-hover: #1d4ed8;
+    --accent: #10b981;          /* Verde Esmeralda (Sucesso/Estabilidade) */
+    
+    /* Tons de Neutros (Escala Slate) */
+    --bg-page: #f8fafc;         /* Fundo levemente frio */
+    --bg-card: #ffffff;
+    --text-main: #1e293b;       /* Slate 800 (Melhor que preto puro) */
+    --text-muted: #64748b;      /* Slate 500 */
+    --border: #e2e8f0;          /* Slate 200 */
+    
+    /* Cores de Código (Dark Mode para blocos) */
+    --code-bg: #0f172a;         /* Slate 900 */
+    --code-text: #f1f5f9;
+    --code-inline-bg: #f1f5f9;
+    --code-inline-text: #be123c; /* Rosa/Vinho para destaque */
+
+    /* Espaçamentos e Bordas */
+    --radius: 8px;
+    --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
 }
 
-/* 🖋 Tipografia base */
+/* ==========================================================================
+   🌐 RESET E BASE
+   ========================================================================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 html {
-  font-family: "Inter", sans-serif; /* fonte moderna e legível */
-  font-size: 16px;
-  scroll-behavior: smooth;
-  line-height: 1.6;
-  background: var(--cor-bg);
-  color: var(--cor-texto);
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-size: 16px;
+    scroll-behavior: smooth;
+    line-height: 1.6;
+    background-color: var(--bg-page);
+    color: var(--text-main);
 }
 
-/* 🌐 Linhas gerais de layout */
 body {
-  margin: 0;
-  padding: 1rem;
-  max-width: 960px;
-  margin-left: auto;
-  margin-right: auto;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
 }
 
-/* 🗂 Cabeçalhos */
+/* ==========================================================================
+   🗂 TIPOGRAFIA
+   ========================================================================== */
 h1, h2, h3 {
-  font-weight: 700;
-  letter-spacing: 0.5px;
-  margin-top: 1.5rem;
-  margin-bottom: 0.5rem;
-  color: var(--cor-principal);
+    color: var(--text-main);
+    font-weight: 800;
+    line-height: 1.2;
 }
 
-h1 { font-size: 2rem; }
-h2 { font-size: 1.75rem; }
-h3 { font-size: 1.5rem; }
-
-/* 📄 Texto padrão e listas */
-p, li {
-  font-size: 1rem;
-  margin-bottom: 0.75rem;
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 4px solid var(--primary);
+    padding-bottom: 0.5rem;
+    display: inline-block;
 }
 
-ul, ol {
-  padding-left: 1.25rem;
-  margin-bottom: 1rem;
+h2 {
+    font-size: 1.75rem;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
-/* 🔗 Links */
-a {
-  color: var(--cor-principal);
-  text-decoration: none;
-  font-weight: 500;
+h2::before {
+    content: "#";
+    color: var(--primary);
+    font-weight: 400;
+    opacity: 0.5;
 }
 
-a:hover, a:focus {
-  color: var(--cor-accento);
-  text-decoration: underline;
+h3 {
+    font-size: 1.25rem;
+    margin-top: 2rem;
+    color: var(--text-muted);
 }
 
-/* 🗃 Seções e cartões */
-section {
-  background: var(--cor-bg-card);
-  padding: 1rem;
-  margin-bottom: 1.5rem;
-  border: 1px solid var(--cor-separador);
-  border-radius: 0.35rem;
+p {
+    margin-bottom: 1.25rem;
 }
 
-/* 📌 Destaques em listas ou itens */
 strong {
-  color: var(--cor-secundaria);
+    color: var(--primary);
+    font-weight: 600;
 }
 
-/* 📏 Separadores */
+/* ==========================================================================
+   🔗 LINKS E INTERAÇÃO
+   ========================================================================== */
+a {
+    color: var(--primary);
+    text-decoration: none;
+    transition: all 0.2s ease;
+    border-bottom: 1px solid transparent;
+}
+
+a:hover {
+    color: var(--primary-hover);
+    border-bottom-color: var(--primary-hover);
+}
+
+a:focus {
+    outline: 2px solid var(--primary);
+    outline-offset: 4px;
+    border-radius: 4px;
+}
+
+/* ==========================================================================
+   💻 BLOCOS DE CÓDIGO (Destaque do Dicionário)
+   ========================================================================== */
+/* Código dentro de parágrafos */
+code {
+    background-color: var(--code-inline-bg);
+    color: var(--code-inline-text);
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    font-family: "Cascadia Code", "Fira Code", monospace;
+    font-size: 0.9em;
+}
+
+/* Blocos grandes de código */
+pre {
+    background-color: var(--code-bg);
+    color: var(--code-text);
+    padding: 1.5rem;
+    border-radius: var(--radius);
+    overflow-x: auto;
+    margin: 1.5rem 0;
+    box-shadow: var(--shadow);
+    border-left: 4px solid var(--primary);
+}
+
+pre code {
+    background: transparent;
+    color: inherit;
+    padding: 0;
+    font-size: 0.95rem;
+}
+
+/* ==========================================================================
+   📦 COMPONENTES (Listas, Seções)
+   ========================================================================== */
+ul {
+    list-style: none; /* Vamos usar marcadores customizados */
+    margin-bottom: 1.5rem;
+}
+
+li {
+    margin-bottom: 0.75rem;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-weight: bold;
+}
+
+/* Pequenas descrições abaixo de links no Index */
+small {
+    display: block;
+    color: var(--text-muted);
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+}
+
+/* Separadores */
 hr {
-  border: none;
-  border-top: 1px solid var(--cor-separador);
-  margin: 2rem 0;
+    border: 0;
+    height: 1px;
+    background: var(--border);
+    margin: 3rem 0;
 }
 
-/* 📱 Responsividade simples */
-@media (max-width: 600px) {
-  html { font-size: 15px; }
-  h1 { font-size: 1.75rem; }
-  h2 { font-size: 1.5rem; }
+/* ==========================================================================
+   📱 RESPONSIVIDADE
+   ========================================================================== */
+@media (max-width: 640px) {
+    html { font-size: 15px; }
+    body { padding: 1rem; }
+    h1 { font-size: 2rem; }
+    pre { padding: 1rem; }
+}
+/* Layout em duas colunas */
+.layout-container {
+    display: grid;
+    grid-template-columns: 250px 1fr; /* Sidebar: 250px, Conteúdo: o resto */
+    gap: 40px;
+    align-items: start;
+}
+
+/* Sidebar "Grudenta" */
+.sidebar {
+    position: sticky;
+    top: 2rem; /* Fica presa no topo ao rolar */
+    height: calc(100vh - 4rem); /* Altura total da tela */
+    overflow-y: auto; /* Se o menu for grande, ele tem scroll próprio */
+    padding-right: 1rem;
+    border-right: 1px solid var(--border);
+}
+
+.sidebar h3 {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-muted);
+    margin-top: 1.5rem;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar li {
+    padding-left: 0;
+    margin-bottom: 0.5rem;
+}
+
+.sidebar li::before {
+    content: ""; /* Remove a seta que colocamos antes para o menu */
+}
+
+.sidebar a {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    font-weight: 400;
+}
+
+.sidebar a:hover, .sidebar a.active {
+    color: var(--primary);
+    font-weight: 600;
+}
+
+/* Ajuste para mobile: esconde a sidebar ou coloca no topo */
+@media (max-width: 850px) {
+    .layout-container {
+        grid-template-columns: 1fr;
+    }
+    .sidebar {
+        position: static;
+        height: auto;
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+        margin-bottom: 2rem;
+    }
 }

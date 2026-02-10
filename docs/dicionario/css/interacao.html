@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interações e Movimento em CSS</title>
+    <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+
+<h1>Interações e Movimento</h1>
+
+<p>
+CSS permite criar experiências dinâmicas através de **transições** (mudanças suaves de estado), **transformações** (alteração de forma e posição) e **animações** (sequências complexas de movimentos).
+</p>
+
+<hr>
+
+<!-- ================= TRANSITIONS ================= -->
+
+<h2>Transitions — Transições Suaves</h2>
+
+<p>
+Permite que as mudanças de propriedades ocorram de forma gradual ao longo de um tempo determinado, em vez de uma mudança instantânea.
+</p>
+
+<pre>
+button {
+  background-color: blue;
+  transition: background-color 0.3s ease-in-out;
+}
+
+button:hover {
+  background-color: red;
+}
+</pre>
+
+<h3>Propriedades da Transição</h3>
+<ul>
+    <li><code>transition-property</code> — Qual propriedade será animada (ex: color, width, all).</li>
+    <li><code>transition-duration</code> — Duração (ex: 0.5s, 200ms).</li>
+    <li><code>transition-timing-function</code> — Curva de aceleração (<code>linear</code>, <code>ease</code>, <code>ease-in</code>, <code>ease-out</code>, <code>ease-in-out</code>).</li>
+    <li><code>transition-delay</code> — Tempo de espera antes de começar.</li>
+</ul>
+
+<p><strong>Shorthand:</strong> <code>transition: property duration timing delay;</code></p>
+
+<hr>
+
+<!-- ================= TRANSFORM ================= -->
+
+<h2>transform — Transformações 2D e 3D</h2>
+
+<p>
+Modifica o espaço de coordenadas do elemento. **Não afeta o layout** ao redor (não empurra outros elementos).
+</p>
+
+<pre>
+.box:hover {
+  transform: scale(1.2) rotate(45deg);
+}
+</pre>
+
+<h3>Funções Comuns</h3>
+<ul>
+    <li><code>translate(x, y)</code> — Move o elemento nos eixos X e Y.</li>
+    <li><code>scale(x, y)</code> — Altera o tamanho (1 = 100%, 1.5 = 150%).</li>
+    <li><code>rotate(deg)</code> — Rotaciona em graus (ex: 90deg, -15deg).</li>
+    <li><code>skew(x, y)</code> — Inclina o elemento.</li>
+</ul>
+
+<p><strong>transform-origin:</strong> Define o ponto central da transformação (ex: <code>top left</code>, <code>center</code>).</p>
+
+<hr>
+
+<!-- ================= ANIMATION ================= -->
+
+<h2>CSS Animations — Animações Complexas</h2>
+
+<p>
+Diferente das transições, as animações não precisam de um gatilho (como hover) e podem ter vários estágios definidos por <code>@keyframes</code>.
+</p>
+
+<h3>1. Definindo a sequência (@keyframes)</h3>
+<pre>
+@keyframes flutuar {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-20px); }
+  100% { transform: translateY(0); }
+}
+</pre>
+
+<h3>2. Aplicando a animação</h3>
+<pre>
+.elemento {
+  animation: flutuar 3s infinite ease-in-out;
+}
+</pre>
+
+<h3>Propriedades de Animação</h3>
+<ul>
+    <li><code>animation-name</code> — Nome do keyframe.</li>
+    <li><code>animation-duration</code> — Tempo total de um ciclo.</li>
+    <li><code>animation-iteration-count</code> — Quantas vezes (número ou <code>infinite</code>).</li>
+    <li><code>animation-direction</code> — <code>normal</code>, <code>reverse</code>, <code>alternate</code> (vai e volta).</li>
+    <li><code>animation-fill-mode</code> — <code>forwards</code> (mantém o estado final) ou <code>backwards</code>.</li>
+    <li><code>animation-play-state</code> — <code>running</code> ou <code>paused</code>.</li>
+</ul>
+
+<hr>
+
+<!-- ================= INTERACTION STATES ================= -->
+
+<h2>Estados de Interação (Pseudoclasses)</h2>
+
+<p>Definem estilos baseados no comportamento do usuário.</p>
+
+<ul>
+    <li><code>:hover</code> — Cursor sobre o elemento.</li>
+    <li><code>:active</code> — Momento do clique.</li>
+    <li><code>:focus</code> — Quando o elemento recebe foco (via teclado/Tab ou clique em inputs).</li>
+    <li><code>:visited</code> — Links já clicados.</li>
+</ul>
+
+<hr>
+
+<!-- ================= PERFORMANCE ================= -->
+
+<h2>Performance e Boas Práticas</h2>
+
+<p>
+Animações podem pesar no processamento. Siga estas diretrizes técnicas:
+</p>
+
+<ul>
+    <li><strong>Prefira Transform e Opacity:</strong> São propriedades otimizadas pela GPU (placa de vídeo). Animar <code>width</code> ou <code>margin</code> causa "reflow" e pode travar a tela.</li>
+    <li><strong>Will-change:</strong> Informe ao navegador que um elemento vai mudar (use com moderação): <code>will-change: transform;</code>.</li>
+    <li><strong>Acessibilidade:</strong> Respeite usuários que preferem movimentos reduzidos usando a Media Query <code>@media (prefers-reduced-motion: reduce)</code>.</li>
+</ul>
+
+<hr>
+
+<!-- ================= CURSOR ================= -->
+
+<h2>cursor — Estilo do Ponteiro</h2>
+
+<p>Define qual ícone o mouse exibirá ao passar sobre o elemento.</p>
+
+<pre>
+.clicavel { cursor: pointer; }
+.bloqueado { cursor: not-allowed; }
+.carregando { cursor: wait; }
+</pre>
+
+<hr>
+
+<p>
+<a href="../index.html">⬅ Voltar ao Dicionário</a>
+</p>
+
+</body>
+</html>
